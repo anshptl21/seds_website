@@ -2,7 +2,7 @@
    TAMU SEDS — Global Styles
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Archivo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Archivo:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   --color-bg: #000000;
@@ -620,6 +620,161 @@ body.sidebar-open .sidebar__item {
   margin-top: 40px;
   font-size: 0.75rem;
   color: var(--color-text-dim);
+}
+
+/* ============================================================
+   SCROLL REVEAL (used on the About page)
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal--left  { transform: translateX(-70px); }
+.reveal--right { transform: translateX(70px); }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: opacity 0.2s linear; transform: none !important; }
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+
+.about-page {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-hero {
+  padding: calc(var(--header-height) + 60px) 0 20px;
+  text-align: center;
+}
+
+.about-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.about-hero__intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--color-text-dim);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-row {
+  padding: 80px 0;
+}
+
+.about-row .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-row--single .container {
+  display: block;
+}
+
+.about-row__text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin: 0 0 22px;
+  text-transform: uppercase;
+}
+
+.about-row__text p {
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e6e6e6;
+  margin: 0 0 18px;
+}
+
+.about-row__text p:last-child { margin-bottom: 0; }
+
+.about-row__text strong { font-weight: 700; }
+
+.about-row__text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--color-text);
+}
+.about-row__text a:hover { color: var(--color-accent); }
+
+.about-row__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.about-row__header h2 { margin: 0; }
+
+.about-row__badge {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--color-text-dim);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Image placeholder — swap for a real <img> once photos are ready */
+.about-row__media {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Alternate row order on wide screens if you ever want image-left rows:
+   add class "about-row--flip" and uncomment below */
+/* .about-row--flip .about-row__text { order: 2; }
+.about-row--flip .about-row__media { order: 1; } */
+
+@media (max-width: 860px) {
+  .about-row .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-row { padding: 56px 0; }
+  .about-row__media { order: 2; }
+  .about-row__text { order: 1; }
 }
 
 /* ============================================================
