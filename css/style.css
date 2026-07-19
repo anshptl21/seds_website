@@ -782,6 +782,128 @@ body.sidebar-open .sidebar__item {
 }
 
 /* ============================================================
+   MISSIONS PAGE
+   ============================================================ */
+
+.mission-page {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mission-hero {
+  padding: calc(var(--header-height) + 60px) 0 20px;
+  text-align: center;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.mission-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.mission-hero__intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--color-text-dim);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.mission-row {
+  padding: 90px 0;
+}
+
+.mission-row .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Dark theme: black background, white text */
+.mission-row--dark {
+  background: #000000;
+  color: #f5f5f5;
+}
+
+.mission-row--dark .mission-row__eyebrow { color: #9a9a9a; }
+
+.mission-row--dark .mission-row__media {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #9a9a9a;
+}
+
+/* Light theme: white background, black text */
+.mission-row--light {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+.mission-row--light .mission-row__eyebrow { color: #6b6b6b; }
+
+.mission-row--light .mission-row__media {
+  border-color: rgba(0, 0, 0, 0.25);
+  color: #6b6b6b;
+}
+
+.mission-row__eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.mission-row__text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin: 0 0 22px;
+  text-transform: uppercase;
+}
+
+.mission-row__text p {
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.mission-row__text p:last-child { margin-bottom: 0; }
+
+/* Image placeholder — swap for a real <img> once photos are ready */
+.mission-row__media {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 860px) {
+  .mission-row .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .mission-row { padding: 60px 0; }
+  .mission-row__media { order: 2; }
+  .mission-row__text { order: 1; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 

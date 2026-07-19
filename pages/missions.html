@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Missions — TAMU SEDS</title>
+<meta name="description" content="TAMU SEDS mission overview.">
 <link rel="stylesheet" href="../css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
-<body>
+<body class="mission-page">
 
-<!-- ============ HEADER (copy exactly as-is on every page) ============ -->
+<!-- ============ HEADER ============ -->
 <header class="site-header">
   <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
     <span class="nav-toggle__bar"></span>
@@ -19,7 +21,7 @@
   <span class="site-title">TAMU SEDS</span>
 </header>
 
-<!-- ============ SIDEBAR (copy exactly as-is on every page) ============ -->
+<!-- ============ SIDEBAR ============ -->
 <div id="sidebar-overlay" class="sidebar-overlay"></div>
 <nav id="sidebar" class="sidebar" aria-hidden="true">
   <div class="sidebar__top">
@@ -30,18 +32,96 @@
   <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
 </nav>
 
-<!-- ============ PAGE CONTENT — edit below this line ============ -->
-<section class="statement" style="padding-top: calc(var(--header-height) + 80px);">
+<!-- ============ PAGE INTRO ============ -->
+<section class="mission-hero">
   <div class="container">
-    <h1 class="schedule__title" style="margin-bottom: 24px;">MISSIONS</h1>
-    <p class="statement__text">
-      Replace this paragraph with the page's content. Reuse classes from
-      style.css (.statement, .schedule, .board, .btn, etc.) to stay consistent
-      with the rest of the site, or add new ones as needed.
+    <h1 class="mission-hero__title">Missions</h1>
+    <p class="mission-hero__intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder intro copy —
+      replace with the real mission overview whenever it's ready.
     </p>
   </div>
 </section>
-<!-- ============ END PAGE CONTENT ============ -->
+
+<!-- ============ MISSION 01 — DARK ============ -->
+<section class="mission-row mission-row--dark">
+  <div class="container">
+    <div class="mission-row__text reveal reveal--right">
+      <span class="mission-row__eyebrow">Mission 01</span>
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
+      </p>
+    </div>
+    <div class="mission-row__media reveal reveal--left">Image placeholder — Mission 01</div>
+  </div>
+</section>
+
+<!-- ============ MISSION 02 — LIGHT ============ -->
+<section class="mission-row mission-row--light">
+  <div class="container">
+    <div class="mission-row__text reveal reveal--right">
+      <span class="mission-row__eyebrow">Mission 02</span>
+      <h2>Dolor Sit Amet</h2>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
+        omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+      </p>
+      <p>
+        Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo.
+      </p>
+    </div>
+    <div class="mission-row__media reveal reveal--left">Image placeholder — Mission 02</div>
+  </div>
+</section>
+
+<!-- ============ MISSION 03 — DARK ============ -->
+<section class="mission-row mission-row--dark">
+  <div class="container">
+    <div class="mission-row__text reveal reveal--right">
+      <span class="mission-row__eyebrow">Mission 03</span>
+      <h2>Consectetur Elit</h2>
+      <p>
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+        fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+        sequi nesciunt.
+      </p>
+      <p>
+        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+        consectetur, adipisci velit.
+      </p>
+    </div>
+    <div class="mission-row__media reveal reveal--left">Image placeholder — Mission 03</div>
+  </div>
+</section>
+
+<!-- ============ MISSION 04 — LIGHT ============ -->
+<section class="mission-row mission-row--light">
+  <div class="container">
+    <div class="mission-row__text reveal reveal--right">
+      <span class="mission-row__eyebrow">Mission 04</span>
+      <h2>Ut Labore Magna</h2>
+      <p>
+        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+      </p>
+      <p>
+        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+        quam nihil molestiae consequatur.
+      </p>
+    </div>
+    <div class="mission-row__media reveal reveal--left">Image placeholder — Mission 04</div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
@@ -51,6 +131,7 @@
 
 <script src="../js/nav-config.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/scroll-reveal.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
