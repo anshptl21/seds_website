@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Title — TAMU SEDS</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER (copy exactly as-is on every page) ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="../assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR (copy exactly as-is on every page) ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ PAGE CONTENT — edit below this line ============ -->
+<section class="statement" style="padding-top: calc(var(--header-height) + 80px);">
+  <div class="container">
+    <h1 class="schedule__title" style="margin-bottom: 24px;">PAGE TITLE</h1>
+    <p class="statement__text">
+      Replace this paragraph with the page's content. Reuse classes from
+      style.css (.statement, .schedule, .board, .btn, etc.) to stay consistent
+      with the rest of the site, or add new ones as needed.
+    </p>
+  </div>
+</section>
+<!-- ============ END PAGE CONTENT ============ -->
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/nav-config.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
