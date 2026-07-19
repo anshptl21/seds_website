@@ -294,8 +294,7 @@ body.sidebar-open .sidebar__item {
 /* ---- Animated acronym reveal (SEDS -> full phrase) ---- */
 .hero__headline--animated {
   position: relative;
-  display: inline-block;
-  white-space: nowrap;
+  display: block;
 }
 
 .hero__acronym-only {
@@ -318,7 +317,9 @@ body.sidebar-open .sidebar__item {
 
 .hero__expanded {
   display: inline-flex;
-  gap: 0.35em;
+  flex-wrap: wrap;
+  row-gap: 0.15em;
+  column-gap: 0.35em;
   opacity: 0;
   animation: heroExpandIn 0.7s ease forwards 1.6s;
 }
@@ -348,7 +349,12 @@ body.sidebar-open .sidebar__item {
   }
 }
 
+.hero__cta {
+  margin-top: 4px;
+}
+
 .hero__join-btn {
+  display: inline-block;
   opacity: 0;
   animation: heroBtnFadeIn 0.8s ease forwards 1.9s;
 }
@@ -358,8 +364,6 @@ body.sidebar-open .sidebar__item {
 
 /* Mobile: skip the expand animation, just fade in "SEDS" */
 @media (max-width: 720px) {
-  .hero__headline--animated { white-space: normal; }
-
   .hero__acronym-only {
     position: static;
     display: inline-block;
