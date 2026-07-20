@@ -1290,6 +1290,19 @@ body.sidebar-open .sidebar__item {
 
 .officers-page {
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(6,6,8,0.82) 0%, rgba(24,24,27,0.62) 42%, rgba(52,52,58,0.4) 100%),
+    url('../assets/moon.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .officers-page { background-attachment: scroll; }
 }
 
 .officers-hero {
