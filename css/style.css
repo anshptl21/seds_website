@@ -2694,6 +2694,356 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 /* ============================================================
+   STUDENT ASTRONAUT CORPS PAGE
+   ============================================================ */
+
+.sac-page {
+  font-family: 'Montserrat', sans-serif;
+  background: #060203;
+  color: #ffffff;
+}
+
+/* ---- Hero: maroon glow gradient + SEDS -> Student Astronaut Corps reveal ---- */
+.sac-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--header-height) + 40px) 20px 60px;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(74,17,23,0.65) 0%, transparent 62%),
+    #060203;
+}
+
+.sac-hero__title {
+  position: relative;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: clamp(2rem, 5.6vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.sac-hero__acronym-only {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation:
+    solarSpread 1s ease forwards 0.6s,
+    solarFadeOut 0.7s ease forwards 1.6s;
+}
+
+.sac-hero__expanded {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.1em;
+  column-gap: 0.35em;
+  opacity: 0;
+  animation: solarExpandIn 0.7s ease forwards 1.6s;
+}
+
+.sac-hero__word {
+  opacity: 0;
+  transform: translateY(0.3em);
+  animation: solarWordIn 0.8s ease forwards 1.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sac-hero__acronym-only,
+  .sac-hero__expanded,
+  .sac-hero__word {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .sac-hero__acronym-only { display: none; }
+}
+
+/* ---- Section heading shared across the page (white, per brand rule) ---- */
+.sac-page h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  margin: 0 0 20px;
+}
+
+/* ---- Fade-in intro: "What is Student Astronaut Corps" ---- */
+.sac-fade {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.sac-fade__text {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+/* ---- Mission timeline: maroon panel + white line/dots ---- */
+.sac-timeline {
+  padding: 90px 0 100px;
+  text-align: center;
+  background: linear-gradient(180deg, #3a0d13 0%, #1c0609 55%, transparent 100%);
+}
+
+.sac-timeline__date {
+  color: #e8b4bb;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 70px;
+}
+
+.sac-timeline__line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.sac-timeline__line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.sac-timeline__point {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 18px 4px rgba(74, 17, 23, 0.9);
+  flex-shrink: 0;
+}
+
+.sac-timeline__hint {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #d9a9ae;
+  text-transform: uppercase;
+}
+
+/* ---- "What we do?" slide-in text + image row ---- */
+.sac-row {
+  padding: 30px 0 100px;
+}
+
+.sac-row .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.sac-row__text p {
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+.sac-row__text p:last-child { margin-bottom: 0; }
+
+.sac-row__media {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 860px) {
+  .sac-row .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sac-row { padding: 20px 0 60px; }
+  .sac-row__media { order: 2; }
+  .sac-row__text { order: 1; }
+}
+
+/* ---- Meet the Team: 2-frame hover-reveal grid ---- */
+.sac-team {
+  padding: 10px 0 90px;
+}
+
+.sac-team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.sac-team-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #150608;
+}
+
+.sac-team-card__photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a6b6e;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 12px;
+  transition: opacity 0.35s ease;
+}
+
+.sac-team-card:hover .sac-team-card__photo,
+.sac-team-card:focus-within .sac-team-card__photo {
+  opacity: 0.3;
+}
+
+.sac-team-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  gap: 6px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.sac-team-card:hover .sac-team-card__overlay,
+.sac-team-card:focus-within .sac-team-card__overlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sac-team-card__role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #d42d3f;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sac-team-card__year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---- Collapsible: Join / Sponsor Us / Contact Us ---- */
+.sac-support {
+  padding: 0 0 100px;
+}
+
+.sac-accordion {
+  max-width: 780px;
+  margin: 0 auto 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(74, 17, 23, 0.18);
+}
+
+.sac-accordion__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.sac-accordion__summary::-webkit-details-marker { display: none; }
+
+.sac-accordion__chevron {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.sac-accordion[open] .sac-accordion__chevron {
+  transform: rotate(-135deg);
+}
+
+.sac-accordion__body {
+  padding: 0 26px 26px;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #ffffff;
+}
+
+.sac-accordion__body a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sac-accordion__body a:hover { color: #e8b4bb; }
+
+@media (max-width: 560px) {
+  .sac-team__grid { grid-template-columns: 1fr; max-width: 280px; }
+  .sac-timeline__point { width: 14px; height: 14px; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
