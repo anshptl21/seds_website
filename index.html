@@ -170,18 +170,79 @@
   <div class="container">
     <h2 class="board__title">ADVISORY BOARD</h2>
     <div class="board__grid">
-      <div class="board__card">
-        <div class="board__photo" style="background-image:url('assets/advisors/nachon.jpg')"></div>
+      <div class="board__card" tabindex="0">
+        <div class="board__photo-wrap">
+          <div class="board__photo" style="background-image:url('assets/advisors/nachon.jpg')"></div>
+          <div class="board__overlay">
+            <p>Lorem ipsum dolor sit amet — placeholder bio for Dr. Marion Nachon goes here.</p>
+          </div>
+        </div>
         <p class="board__name">Dr. Marion Nachon</p>
       </div>
-      <div class="board__card">
-        <div class="board__photo" style="background-image:url('assets/advisors/kennicutt.jpg')"></div>
+      <div class="board__card" tabindex="0">
+        <div class="board__photo-wrap">
+          <div class="board__photo" style="background-image:url('assets/advisors/kennicutt.jpg')"></div>
+          <div class="board__overlay">
+            <p>Lorem ipsum dolor sit amet — placeholder bio for Dr. Robert Kennicutt goes here.</p>
+          </div>
+        </div>
         <p class="board__name">Dr. Robert Kennicutt</p>
       </div>
-      <div class="board__card">
-        <div class="board__photo" style="background-image:url('assets/advisors/abell.jpg')"></div>
+      <div class="board__card" tabindex="0">
+        <div class="board__photo-wrap">
+          <div class="board__photo" style="background-image:url('assets/advisors/abell.jpg')"></div>
+          <div class="board__overlay">
+            <p>Lorem ipsum dolor sit amet — placeholder bio for Dr. Paul Abell goes here.</p>
+          </div>
+        </div>
         <p class="board__name">Dr. Paul Abell</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS (flip on hover, click to visit site) ============ -->
+<!-- Front face shows the logo (placeholder box until real logos are added
+     to assets/partners/); back face shows the org name. The whole card
+     is a link, so clicking anywhere redirects to the org's site. -->
+<section class="partners">
+  <div class="container">
+    <h2 class="partners__title">OUR PARTNERS</h2>
+    <div class="partners__grid">
+
+      <a class="partner-flip" href="https://www.seds.org" target="_blank" rel="noopener">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <span class="partner-flip__front-label">Logo placeholder</span>
+          </div>
+          <div class="partner-flip__back">
+            <p>SEDS USA</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="https://www.aiaa.org" target="_blank" rel="noopener">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <span class="partner-flip__front-label">Logo placeholder</span>
+          </div>
+          <div class="partner-flip__back">
+            <p>AIAA</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="https://www.nasa.gov" target="_blank" rel="noopener">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <span class="partner-flip__front-label">Logo placeholder</span>
+          </div>
+          <div class="partner-flip__back">
+            <p>NASA</p>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
