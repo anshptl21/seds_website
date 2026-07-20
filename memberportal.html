@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portal — TAMU SEDS</title>
+<meta name="description" content="TAMU SEDS member portal — look up your points, attendance, and affiliations.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="portal-page">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="portal-hero">
+  <div class="container">
+    <h1 class="portal-hero__title">
+      <span class="portal-hero__acronym-only">SEDS</span>
+      <span class="portal-hero__expanded">
+        <span class="portal-hero__word">Student</span>
+        <span class="portal-hero__word">Portal</span>
+      </span>
+    </h1>
+  </div>
+</section>
+
+<!-- ============ SEARCH ============ -->
+<!-- Not wired to the backend yet — this just prevents a page reload on
+     submit. Point portal-search__form's submit handler at the Apps
+     Script Web App URL once it's ready, then populate the #portal-*
+     elements below with the returned JSON. -->
+<section class="portal-search">
+  <form class="portal-search__form" id="portal-search-form">
+    <span class="portal-search__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </span>
+    <input
+      type="text"
+      id="portal-search-input"
+      class="portal-search__input"
+      placeholder="Enter your name"
+      autocomplete="off"
+      required
+    >
+    <button type="submit" class="portal-search__submit">Search</button>
+  </form>
+</section>
+<p class="portal-search__msg" id="portal-search-msg"></p>
+
+<!-- ============ DATA TEMPLATE (placeholder — halo hover only, no expand) ============ -->
+<section class="portal-template">
+  <div class="portal-template__grid">
+
+    <div class="portal-card portal-card--name">
+      <p class="portal-card__value" id="portal-member-name">Member Name</p>
+    </div>
+
+    <div class="portal-card portal-card--small">
+      <p class="portal-card__label">Next Event:</p>
+      <p class="portal-card__value" id="portal-next-event">Meeting</p>
+    </div>
+
+    <div class="portal-card portal-card--small">
+      <p class="portal-card__label">Affiliations:</p>
+      <p class="portal-card__value" id="portal-affiliations">Design Team</p>
+    </div>
+
+    <div class="portal-card portal-card--points">
+      <p class="portal-card__label">Points</p>
+      <p class="portal-card__value" id="portal-points">6</p>
+    </div>
+
+    <div class="portal-card portal-card--attendance">
+      <p class="portal-card__label">General Meeting Attendance</p>
+      <ul class="portal-card__list" id="portal-attendance-list">
+        <li>Speaker Name Meeting: Attended</li>
+        <li>Speaker Name Meeting: RSVP'd</li>
+        <li>Speaker Name Meeting: No Status</li>
+      </ul>
+    </div>
+
+    <div class="portal-card portal-card--events">
+      <p class="portal-card__label">Events You Are Signed Up For:</p>
+      <ul class="portal-card__list" id="portal-events-list">
+        <li>Event Name</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/nav-config.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('portal-search-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var msg = document.getElementById('portal-search-msg');
+  msg.textContent = 'Backend not connected yet — this is a visual template only.';
+});
+</script>
+</body>
+</html>
