@@ -1285,6 +1285,159 @@ body.sidebar-open .sidebar__item {
 }
 
 /* ============================================================
+   OFFICERS / TEAM GRID PAGE
+   ============================================================ */
+
+.officers-page {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.officers-hero {
+  padding: calc(var(--header-height) + 60px) 0 20px;
+  text-align: center;
+}
+
+.officers-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.officers-hero__intro {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text-dim);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.officers-grid {
+  padding: 50px 0 100px;
+}
+
+.officers-grid__rows {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.officer-card {
+  position: relative;
+  aspect-ratio: 506 / 793;
+  border: 4px solid #FFD800;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #141414;
+}
+
+.officer-card__photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 12px;
+  transition: opacity 0.35s ease;
+}
+
+.officer-card:hover .officer-card__photo,
+.officer-card:focus-within .officer-card__photo {
+  opacity: 0.35;
+}
+
+.officer-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  gap: 6px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.officer-card:hover .officer-card__overlay,
+.officer-card:focus-within .officer-card__overlay {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.officer-card__role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.officer-card__year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #e2453c;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 6px;
+}
+
+.officer-card__socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.officer-social {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.officer-social:hover {
+  background: #FFD800;
+  color: #000;
+  transform: translateY(-2px);
+}
+.officer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+@media (max-width: 980px) {
+  .officers-grid__rows { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .officers-grid__rows { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .officer-card { border-width: 3px; }
+}
+@media (max-width: 420px) {
+  .officers-grid__rows { grid-template-columns: 1fr; max-width: 320px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .officer-card__overlay { transition: opacity 0.2s linear; transform: none !important; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
