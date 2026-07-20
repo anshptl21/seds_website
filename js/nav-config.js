@@ -30,5 +30,6 @@ const NAV_LINKS = [
   { label: "SAC", href: "/seds_website/studentastronautcorps.html" },
   { label: "Solar Sail", href: "/seds_website/sedssolarsail.html" },
   { label: "Lunabotics", href: "/seds_website/sedslunabotics.html" },
+  { label: "Member Portal", href: "/seds_website/memberportal.html" },
   { label: "Contact", href: "/seds_website/pages/contact.html" },
 ];
