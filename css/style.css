@@ -1053,66 +1053,101 @@ body.sidebar-open .sidebar__item {
 
 .solar-page {
   font-family: 'Montserrat', sans-serif;
-  background: #24202F;
+  background: #020B16;
   color: #ffffff;
 }
 
-/* ---- Hero: gradient + CSS starfield sublayer ---- */
+/* ---- Hero: real background photo ---- */
 .solar-hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--header-height) + 90px) 0 110px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + 40px) 0 60px;
   text-align: center;
   background:
-    radial-gradient(ellipse at 50% 0%, #322c47 0%, transparent 60%),
-    #24202F;
-}
-
-.solar-hero::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background-image:
-    radial-gradient(1.5px 1.5px at 12% 22%, #fff 100%, transparent 100%),
-    radial-gradient(1px   1px   at 28% 68%, #fff 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 44% 12%, #fff 100%, transparent 100%),
-    radial-gradient(1px   1px   at 58% 82%, #fff 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 72% 38%, #fff 100%, transparent 100%),
-    radial-gradient(1px   1px   at 85% 60%, #fff 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 93% 20%, #fff 100%, transparent 100%),
-    radial-gradient(1px   1px   at 6%  85%, #fff 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 36% 45%, #fff 100%, transparent 100%),
-    radial-gradient(1px   1px   at 65% 6%,  #fff 100%, transparent 100%);
-  background-repeat: repeat;
-  background-size: 280px 280px;
-  opacity: 0.55;
-  animation: solarStarsDrift 120s linear infinite;
-  z-index: 0;
-}
-
-@keyframes solarStarsDrift {
-  from { transform: translate(0, 0); }
-  to   { transform: translate(-280px, -280px); }
+    linear-gradient(180deg, rgba(2,11,22,0.35) 0%, rgba(2,11,22,0.55) 60%, #020B16 100%),
+    url('../assets/solar-sail-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .solar-hero__content {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
+/* ---- Animated title reveal (SEDS -> "SEDS Solar Sail") ---- */
 .solar-hero__title {
+  position: relative;
+  display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #FFD800;
-  font-size: clamp(2.4rem, 7vw, 4.6rem);
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 6.4vw, 4.2rem);
+  line-height: 1.1;
   margin: 0;
+  text-align: center;
+}
+
+.solar-hero__acronym-only {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation:
+    solarSpread 1s ease forwards 0.6s,
+    solarFadeOut 0.7s ease forwards 1.6s;
+}
+
+@keyframes solarSpread {
+  from { letter-spacing: 0.04em; }
+  to   { letter-spacing: 0.4em; }
+}
+@keyframes solarFadeOut {
+  to { opacity: 0; }
+}
+
+.solar-hero__expanded {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.1em;
+  column-gap: 0.35em;
+  opacity: 0;
+  animation: solarExpandIn 0.7s ease forwards 1.6s;
+}
+@keyframes solarExpandIn {
+  to { opacity: 1; }
+}
+
+.solar-hero__word {
+  opacity: 0;
+  transform: translateY(0.3em);
+  animation: solarWordIn 0.8s ease forwards 1.6s;
+}
+@keyframes solarWordIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .solar-hero::before { animation: none; }
+  .solar-hero__acronym-only,
+  .solar-hero__expanded,
+  .solar-hero__word {
+    animation: none !important;
+    opacity: 1 !important;
+    letter-spacing: normal !important;
+    transform: none !important;
+  }
+  .solar-hero__acronym-only { display: none; }
 }
 
 /* ---- Section heading shared across the page ---- */
@@ -1195,7 +1230,7 @@ body.sidebar-open .sidebar__item {
 
 .solar-accordion {
   max-width: 780px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
   border: 1px solid rgba(255, 216, 0, 0.35);
   border-radius: 6px;
   overflow: hidden;
