@@ -20,15 +20,15 @@
 */
 
 const NAV_LINKS = [
-  { label: "Home", href: "seds_website/index.html" },
-  { label: "About", href: "seds_website/pages/about.html" },
-  { label: "Join", href: "seds_website/pages/join.html" },
-  { label: "Team", href: "seds_website/pages/team.html" },
-  { label: "Design Teams", href: "seds_website/pages/design_teams.html" },
-  { label: "Speakers", href: "seds_website/pages/speakers.html" },
-  { label: "Space Networking Fair", href: "seds_website/spacenetworkingfair.html" },
-  { label: "SAC", href: "seds_website/studentastronautcorps.html" },
-  { label: "Solar Sail", href: "seds_website/sedssolarsail.html" },
-  { label: "Lunabotics", href: "seds_website/sedslunabotics.html" },
-  { label: "Contact", href: "seds_website/pages/contact.html" },
+  { label: "Home", href: "/seds_website/index.html" },
+  { label: "About", href: "/seds_website/pages/about.html" },
+  { label: "Join", href: "/seds_website/pages/join.html" },
+  { label: "Team", href: "/seds_website/pages/team.html" },
+  { label: "Design Teams", href: "/seds_website/pages/design_teams.html" },
+  { label: "Speakers", href: "/seds_website/pages/speakers.html" },
+  { label: "Space Networking Fair", href: "/seds_website/spacenetworkingfair.html" },
+  { label: "SAC", href: "/seds_website/studentastronautcorps.html" },
+  { label: "Solar Sail", href: "/seds_website/sedssolarsail.html" },
+  { label: "Lunabotics", href: "/seds_website/sedslunabotics.html" },
+  { label: "Contact", href: "/seds_website/pages/contact.html" },
 ];
