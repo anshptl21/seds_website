@@ -474,40 +474,6 @@ body.sidebar-open .sidebar__item {
   margin: 0 0 70px;
 }
 
-.timeline {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  background: var(--color-line);
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.timeline__point {
-  position: relative;
-  z-index: 1;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  box-shadow: 0 0 18px 4px var(--color-accent-glow);
-  cursor: default;
-  flex-shrink: 0;
-}
-
 .timeline__scroll-hint {
   margin-top: 60px;
   font-size: 0.85rem;
@@ -649,6 +615,147 @@ body.sidebar-open .sidebar__item {
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: opacity 0.2s linear; transform: none !important; }
 }
+
+/* ============================================================
+   MISSION TIMELINE (scrollable, click-to-expand dots)
+   Used on: index.html (.timeline), sedssolarsail.html
+   (.solar-timeline), studentastronautcorps.html (.sac-timeline)
+   Each host section sets --mtl-color to theme the dots/halo/box
+   border; see the bottom of this block for the three overrides.
+   ============================================================ */
+
+.mtl-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--mtl-color, #ffffff) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+  padding-bottom: 4px;
+}
+
+.mtl-scroll::-webkit-scrollbar { height: 8px; }
+.mtl-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+}
+.mtl-scroll::-webkit-scrollbar-thumb {
+  background: var(--mtl-color, #ffffff);
+  border-radius: 4px;
+}
+
+.mtl-track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(28px, 4vw, 64px);
+  padding: 34px clamp(24px, 6vw, 56px) 16px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.mtl-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 0;
+}
+
+.mtl-item {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: clamp(150px, 18vw, 210px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mtl-dot-slot {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mtl-dot {
+  position: relative;
+  width: clamp(16px, 2vw, 22px);
+  height: clamp(16px, 2vw, 22px);
+  border-radius: 50%;
+  background: var(--mtl-color, #ffffff);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 0 14px 3px color-mix(in srgb, var(--mtl-color, #ffffff) 55%, transparent);
+  transition: transform 0.25s ease;
+}
+
+.mtl-dot:hover,
+.mtl-dot:focus-visible {
+  transform: scale(1.15);
+  outline: none;
+}
+
+.mtl-dot::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid var(--mtl-color, #ffffff);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.mtl-dot:hover::after,
+.mtl-dot:focus-visible::after,
+.mtl-dot.is-open::after {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+.mtl-box {
+  margin-top: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--mtl-color, #ffffff);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.78rem, 1.05vw, 0.9rem);
+  line-height: 1.55;
+  padding: 0 14px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
+}
+
+.mtl-box.is-open {
+  max-height: 280px;
+  opacity: 1;
+  padding: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mtl-dot,
+  .mtl-dot::after,
+  .mtl-box {
+    transition: none;
+  }
+}
+
+/* Per-page dot/halo/border color */
+.schedule .mtl-scroll        { --mtl-color: var(--color-accent); }
+.solar-timeline .mtl-scroll  { --mtl-color: #FFD800; }
+.sac-timeline .mtl-scroll    { --mtl-color: #D42D3F; }
 
 /* ============================================================
    ABOUT PAGE
@@ -1318,39 +1425,6 @@ body.sidebar-open .sidebar__item {
   margin: 0 0 70px;
 }
 
-.solar-timeline__line {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.solar-timeline__line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  background: rgba(255, 216, 0, 0.35);
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.solar-timeline__point {
-  position: relative;
-  z-index: 1;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #FFD800;
-  box-shadow: 0 0 18px 4px rgba(255, 216, 0, 0.55);
-  flex-shrink: 0;
-}
-
 .solar-timeline__hint {
   margin-top: 50px;
   font-size: 0.85rem;
@@ -1414,7 +1488,6 @@ body.sidebar-open .sidebar__item {
 @media (max-width: 700px) {
   .solar-team__grid,
   .solar-gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .solar-timeline__point { width: 14px; height: 14px; }
 }
 @media (max-width: 420px) {
   .solar-team__grid,
@@ -2808,39 +2881,6 @@ body.lightbox-locked { overflow: hidden; }
   margin: 0 0 70px;
 }
 
-.sac-timeline__line {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.sac-timeline__line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.sac-timeline__point {
-  position: relative;
-  z-index: 1;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 18px 4px rgba(74, 17, 23, 0.9);
-  flex-shrink: 0;
-}
-
 .sac-timeline__hint {
   margin-top: 50px;
   font-size: 0.85rem;
@@ -3040,7 +3080,6 @@ body.lightbox-locked { overflow: hidden; }
 
 @media (max-width: 560px) {
   .sac-team__grid { grid-template-columns: 1fr; max-width: 280px; }
-  .sac-timeline__point { width: 14px; height: 14px; }
 }
 
 /* ============================================================
