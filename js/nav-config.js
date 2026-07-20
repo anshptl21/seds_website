@@ -22,8 +22,13 @@
 const NAV_LINKS = [
   { label: "Home", href: "/index.html" },
   { label: "About", href: "/pages/about.html" },
-  { label: "Missions", href: "/pages/missions.html" },
-  { label: "Team", href: "/pages/team.html" },
-  { label: "Sponsors", href: "/pages/sponsors.html" },
+  { label: "Join", href: "/pages/join.html" },
+  { label: "Join", href: "/pages/team.html" },
+  { label: "Join", href: "/pages/design_teams.html" },
+  { label: "Join", href: "/pages/speakers.html" },
+  { label: "Join", href: "/pages/spacenetworkingfair.html" },
+  { label: "Join", href: "/pages/studentastronautcorps.html" },
+  { label: "Missions", href: "/pages/sedssolarsail.html" },
+  { label: "Sponsors", href: "/pages/sedslunabotics.html" },
   { label: "Contact", href: "/pages/contact.html" },
 ];
