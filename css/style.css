@@ -1451,6 +1451,422 @@ body.sidebar-open .sidebar__item {
 }
 
 /* ============================================================
+   SEDS LUNABOTICS PROJECT PAGE
+   ============================================================ */
+
+.luna-page {
+  font-family: 'Montserrat', sans-serif;
+  background: #cfc6b7;
+  color: #2b2b28;
+}
+
+/* ---- Hero: real photo + SEDS -> Lunabotics reveal ---- */
+.luna-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--header-height) + 40px) 0 60px;
+  background:
+    linear-gradient(180deg, rgba(20,18,14,0.3) 0%, rgba(20,18,14,0.6) 65%, #cfc6b7 100%),
+    url('../assets/lunabotics-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.luna-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.luna-hero__title {
+  position: relative;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #bfeeff;
+  font-size: clamp(2.2rem, 6.4vw, 4.2rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.luna-hero__acronym-only {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation:
+    solarSpread 1s ease forwards 0.6s,
+    solarFadeOut 0.7s ease forwards 1.6s;
+}
+
+.luna-hero__expanded {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: solarExpandIn 0.7s ease forwards 1.6s;
+}
+
+.luna-hero__word {
+  opacity: 0;
+  transform: translateY(0.3em);
+  animation: solarWordIn 0.8s ease forwards 1.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luna-hero__acronym-only,
+  .luna-hero__expanded,
+  .luna-hero__word {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .luna-hero__acronym-only { display: none; }
+}
+
+/* ---- Section heading shared across the page ---- */
+.luna-page h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #bfeeff;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  margin: 0 0 20px;
+}
+
+.luna-section-intro {
+  padding: 70px 0 10px;
+  text-align: center;
+}
+
+.luna-section-intro p {
+  max-width: 700px;
+  margin: 10px auto 0;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4a4438;
+}
+
+/* ---- Team grid: frameless hover-reveal cards ---- */
+.luna-team {
+  padding: 40px 0 90px;
+}
+
+.luna-team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.luna-team-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #b9ae99;
+}
+
+.luna-team-card__photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4438;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 12px;
+  transition: opacity 0.35s ease;
+}
+
+.luna-team-card:hover .luna-team-card__photo,
+.luna-team-card:focus-within .luna-team-card__photo {
+  opacity: 0.3;
+}
+
+.luna-team-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  gap: 6px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.luna-team-card:hover .luna-team-card__overlay,
+.luna-team-card:focus-within .luna-team-card__overlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.luna-team-card__role {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #bfeeff;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.luna-team-card__year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* ---- Accomplishments: slide-in text + image row ---- */
+.luna-accomplish {
+  padding: 30px 0 100px;
+}
+
+.luna-accomplish .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.luna-accomplish__text p {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #2b2b28;
+  margin: 0 0 16px;
+}
+.luna-accomplish__text p:last-child { margin-bottom: 0; }
+
+.luna-accomplish__media {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed rgba(43, 43, 40, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4438;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 860px) {
+  .luna-accomplish .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .luna-accomplish { padding: 20px 0 60px; }
+  .luna-accomplish__media { order: 2; }
+  .luna-accomplish__text { order: 1; }
+}
+
+/* ---- Gallery: frameless grid + lightbox trigger ---- */
+.luna-gallery {
+  padding: 30px 0 90px;
+}
+
+.luna-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.luna-gallery__item {
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: zoom-in;
+  overflow: hidden;
+  background: none;
+  display: block;
+  width: 100%;
+}
+
+.luna-gallery__img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b9ae99;
+  background-size: cover;
+  background-position: center;
+  color: #4a4438;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.luna-gallery__item:hover .luna-gallery__img,
+.luna-gallery__item:focus-visible .luna-gallery__img {
+  transform: scale(1.05);
+  filter: brightness(0.92);
+}
+
+/* ---- Collapsible Join / Support Us (light theme) ---- */
+.luna-support {
+  padding: 0 0 100px;
+}
+
+.luna-accordion {
+  max-width: 780px;
+  margin: 0 auto 24px;
+  border: 1px solid #7fb8cf;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.luna-accordion__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #136b86;
+  font-size: 1.05rem;
+}
+
+.luna-accordion__summary::-webkit-details-marker { display: none; }
+
+.luna-accordion__chevron {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #136b86;
+  border-bottom: 2px solid #136b86;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.luna-accordion[open] .luna-accordion__chevron {
+  transform: rotate(-135deg);
+}
+
+.luna-accordion__body {
+  padding: 0 26px 26px;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2b2b28;
+}
+
+.luna-accordion__body a {
+  color: #136b86;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .luna-team__grid,
+  .luna-gallery__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .luna-team__grid,
+  .luna-gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+@media (max-width: 420px) {
+  .luna-team__grid,
+  .luna-gallery__grid { grid-template-columns: 1fr; max-width: 320px; }
+}
+
+/* ============================================================
+   LIGHTBOX (reusable — any element with [data-lightbox])
+   ============================================================ */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.88);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 500;
+}
+
+.lightbox-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-overlay__frame {
+  width: min(90vw, 900px);
+  height: min(85vh, 700px);
+  background-color: #1c1c1c;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 24px;
+}
+
+.lightbox-overlay__close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+.lightbox-overlay__close:hover { color: #bfeeff; }
+
+body.lightbox-locked { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-overlay { transition: none; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
