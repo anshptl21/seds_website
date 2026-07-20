@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Portal — TAMU SEDS</title>
 <meta name="description" content="TAMU SEDS member portal — look up your points, attendance, and affiliations.">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body class="portal-page">
 
@@ -68,6 +68,19 @@
     <button type="submit" class="portal-search__submit">Search</button>
   </form>
 </section>
+
+<!-- Reusable loading animation — see css/style.css "ORBIT LOADER" for
+     the general-purpose version of this component. Hidden by default;
+     the script below shows it while a search is "in flight." -->
+<div class="orbit-loader" id="portal-loader" role="status" aria-live="polite" style="display:none;">
+  <span class="orbit-loader__planet"></span>
+  <svg class="orbit-loader__track" viewBox="0 0 80 80" aria-hidden="true">
+    <ellipse cx="40" cy="40" rx="34" ry="14" fill="none" stroke="#2f6bff" stroke-width="2"></ellipse>
+  </svg>
+  <span class="orbit-loader__moon"></span>
+  <span class="sr-only">Loading&hellip;</span>
+</div>
+
 <p class="portal-search__msg" id="portal-search-msg"></p>
 
 <!-- ============ DATA TEMPLATE (placeholder — halo hover only, no expand) ============ -->
@@ -118,15 +131,26 @@
   </div>
 </footer>
 
-<script src="js/nav-config.js?v=5"></script>
-<script src="js/main.js?v=5"></script>
+<script src="js/nav-config.js?v=6"></script>
+<script src="js/main.js?v=6"></script>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
 document.getElementById('portal-search-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var msg = document.getElementById('portal-search-msg');
-  msg.textContent = 'Backend not connected yet — this is a visual template only.';
+  var loader = document.getElementById('portal-loader');
+
+  msg.textContent = '';
+  loader.style.display = 'block';
+
+  // Simulated delay so the loader is visible — once the Apps Script
+  // backend is ready, replace this setTimeout with a real fetch() call
+  // to the Web App URL, and hide the loader in .then()/.finally().
+  setTimeout(function () {
+    loader.style.display = 'none';
+    msg.textContent = 'Backend not connected yet — this is a visual template only.';
+  }, 900);
 });
 </script>
 </body>
