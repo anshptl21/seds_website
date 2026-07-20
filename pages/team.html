@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team — TAMU SEDS</title>
+<title>Team &amp; Projects — TAMU SEDS</title>
+<meta name="description" content="TAMU SEDS design teams and NASA project opportunities.">
 <link rel="stylesheet" href="../css/style.css">
+<noscript><style>.team-item__header{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
-<body>
+<body class="team-page">
 
-<!-- ============ HEADER (copy exactly as-is on every page) ============ -->
+<div class="team-page__mars" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
 <header class="site-header">
   <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
     <span class="nav-toggle__bar"></span>
@@ -19,7 +23,7 @@
   <span class="site-title">TAMU SEDS</span>
 </header>
 
-<!-- ============ SIDEBAR (copy exactly as-is on every page) ============ -->
+<!-- ============ SIDEBAR ============ -->
 <div id="sidebar-overlay" class="sidebar-overlay"></div>
 <nav id="sidebar" class="sidebar" aria-hidden="true">
   <div class="sidebar__top">
@@ -30,18 +34,83 @@
   <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
 </nav>
 
-<!-- ============ PAGE CONTENT — edit below this line ============ -->
-<section class="statement" style="padding-top: calc(var(--header-height) + 80px);">
+<!-- ============ BANNER ============ -->
+<section class="team-banner">
+  <p class="team-banner__title"><strong>Students.</strong> <em>Innovating the future.</em></p>
+</section>
+
+<!-- ============ TEAM / PROJECT LIST ============ -->
+<section class="team-list">
   <div class="container">
-    <h1 class="schedule__title" style="margin-bottom: 24px;">TEAM</h1>
-    <p class="statement__text">
-      Replace this paragraph with the page's content. Reuse classes from
-      style.css (.statement, .schedule, .board, .btn, etc.) to stay consistent
-      with the rest of the site, or add new ones as needed.
-    </p>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">SEDS Solar Sail</h2>
+      </div>
+      <p class="team-item__desc">
+        Help us launch one of the first ever student-led solar sail mission. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">NASA HULC</h2>
+      </div>
+      <p class="team-item__desc">
+        Design innovative concepts that improve Environmental Control and Life Support Systems (ECLSS) for long-duration space missions. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">NASA SUITS</h2>
+      </div>
+      <p class="team-item__desc">
+        Develop more crew autonomy and reducing cognitive load so astronauts can focus on mission-critical tasks. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">NASA Micro-g</h2>
+      </div>
+      <p class="team-item__desc">
+        Solve an authentic, low-gravity NASA challenge. Test your design at NASA's Neutral Buoyancy Lab. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">NASA Lunabotics</h2>
+      </div>
+      <p class="team-item__desc">
+        Design and build a lunar construction robot. Compete in Florida for up to $5k. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
+    <div class="team-item">
+      <div class="team-item__header reveal">
+        <span class="team-item__arrow" aria-hidden="true"></span>
+        <h2 class="team-item__title">NASA RASC-AL</h2>
+      </div>
+      <p class="team-item__desc">
+        Address real mission needs for the future of NASA exploration. Compete for up to $7k. Click <a href="#">here</a> to learn more!
+      </p>
+      <span class="team-item__status">Applications Closed</span>
+    </div>
+
   </div>
 </section>
-<!-- ============ END PAGE CONTENT ============ -->
 
 <footer class="site-footer">
   <div class="container">
@@ -51,6 +120,7 @@
 
 <script src="../js/nav-config.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/scroll-reveal.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
