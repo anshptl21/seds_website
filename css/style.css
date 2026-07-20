@@ -908,9 +908,9 @@ body.sidebar-open .sidebar__item {
    ============================================================ */
 
 .team-page {
-  --team-purple: #a26bff;
-  --team-purple-dim: #7c4fd6;
-  --team-bg-deep: #0d0518;
+  --team-accent: #ff7a3c;
+  --team-accent-dim: #d9581f;
+  --team-bg-deep: #150a06;
   position: relative;
   background: var(--team-bg-deep);
   min-height: 100vh;
@@ -939,7 +939,7 @@ body.sidebar-open .sidebar__item {
   z-index: 1;
   padding: calc(var(--header-height) + 46px) 0 40px;
   text-align: center;
-  background: linear-gradient(180deg, #2e1257 0%, #170a30 55%, transparent 100%);
+  background: linear-gradient(180deg, #5c2408 0%, #2a1006 55%, transparent 100%);
 }
 
 .team-banner__title {
@@ -948,7 +948,7 @@ body.sidebar-open .sidebar__item {
   font-size: clamp(1.4rem, 3.4vw, 2.2rem);
   letter-spacing: 0.02em;
   margin: 0;
-  color: #e7defc;
+  color: #f9dcc4;
 }
 
 .team-banner__title strong {
@@ -989,7 +989,7 @@ body.sidebar-open .sidebar__item {
   height: 0;
   border-top: 13px solid transparent;
   border-bottom: 13px solid transparent;
-  border-left: 20px solid var(--team-purple);
+  border-left: 20px solid var(--team-accent);
 }
 
 .team-item__title {
@@ -1016,7 +1016,7 @@ body.sidebar-open .sidebar__item {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.team-item__desc a:hover { color: var(--team-purple); }
+.team-item__desc a:hover { color: var(--team-accent); }
 
 .team-item__status {
   display: block;
