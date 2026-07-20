@@ -1654,8 +1654,8 @@ body.sidebar-open .sidebar__item {
 
 .luna-page {
   font-family: 'Montserrat', sans-serif;
-  background: #cfc6b7;
-  color: #2b2b28;
+  background: #000000;
+  color: #f0f0f0;
 }
 
 /* ---- Hero: real photo + SEDS -> Lunabotics reveal ---- */
@@ -1669,7 +1669,7 @@ body.sidebar-open .sidebar__item {
   text-align: center;
   padding: calc(var(--header-height) + 40px) 0 60px;
   background:
-    linear-gradient(180deg, rgba(20,18,14,0.3) 0%, rgba(20,18,14,0.6) 65%, #cfc6b7 100%),
+    linear-gradient(180deg, rgba(20,18,14,0.3) 0%, rgba(20,18,14,0.6) 65%, #000000 100%),
     url('../assets/lunabotics-hero.png');
   background-size: cover;
   background-position: center;
@@ -1751,7 +1751,7 @@ body.sidebar-open .sidebar__item {
   margin: 10px auto 0;
   font-weight: 400;
   line-height: 1.7;
-  color: #4a4438;
+  color: #cfcfcf;
 }
 
 /* ---- Team grid: frameless hover-reveal cards ---- */
@@ -1852,19 +1852,19 @@ body.sidebar-open .sidebar__item {
   font-weight: 400;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #2b2b28;
+  color: #e8e8e8;
   margin: 0 0 16px;
 }
 .luna-accomplish__text p:last-child { margin-bottom: 0; }
 
 .luna-accomplish__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(43, 43, 40, 0.3);
+  border: 1px dashed rgba(191, 238, 255, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4a4438;
+  color: #bfeeff;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   text-align: center;
@@ -1931,7 +1931,7 @@ body.sidebar-open .sidebar__item {
   filter: brightness(0.92);
 }
 
-/* ---- Collapsible Join / Support Us (light theme) ---- */
+/* ---- Collapsible Join / Support Us (dark theme) ---- */
 .luna-support {
   padding: 0 0 100px;
 }
@@ -1939,10 +1939,10 @@ body.sidebar-open .sidebar__item {
 .luna-accordion {
   max-width: 780px;
   margin: 0 auto 24px;
-  border: 1px solid #7fb8cf;
+  border: 1px solid rgba(191, 238, 255, 0.35);
   border-radius: 6px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .luna-accordion__summary {
@@ -1957,7 +1957,7 @@ body.sidebar-open .sidebar__item {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #136b86;
+  color: #bfeeff;
   font-size: 1.05rem;
 }
 
@@ -1967,8 +1967,8 @@ body.sidebar-open .sidebar__item {
   flex-shrink: 0;
   width: 12px;
   height: 12px;
-  border-right: 2px solid #136b86;
-  border-bottom: 2px solid #136b86;
+  border-right: 2px solid #bfeeff;
+  border-bottom: 2px solid #bfeeff;
   transform: rotate(45deg);
   transition: transform 0.3s ease;
 }
@@ -1982,11 +1982,11 @@ body.sidebar-open .sidebar__item {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.75;
-  color: #2b2b28;
+  color: #e8e8e8;
 }
 
 .luna-accordion__body a {
-  color: #136b86;
+  color: #bfeeff;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
