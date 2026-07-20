@@ -334,8 +334,7 @@ body.sidebar-open .sidebar__item {
 .hero__rest {
   margin-left: 0.15em;
   opacity: 0;
-  font-size: clamp(1.4rem, 4.2vw, 3rem)
-  transform: translateX(-0.3em);
+  font-size: clamp(1.4rem, 4.2vw, 3rem);
   animation: heroWordIn 1s ease forwards 1.6s;
 }
 @keyframes heroWordIn {
