@@ -68,6 +68,25 @@ embedded on the Google Site (a form, a map, a newsletter signup, etc.).
 Replace the `<div class="footer__embed">…</div>` in `index.html` with the
 real embed code (an `<iframe>`, for example).
 
+## Cache-busting after CSS/JS edits
+
+Every page loads `css/style.css` and the `js/*.js` files with a `?v=4`
+query string. Browsers (and GitHub's CDN) cache these files aggressively,
+so without this, editing `style.css` and pushing won't show up for
+visitors — or even for you — until the cache happens to expire.
+
+**After any CSS or JS change, bump the number** in every `?v=N` across
+all HTML files before committing. The fastest way:
+
+```bash
+# from the repo root, replace 4 with the new number everywhere
+grep -rl '?v=4"' --include="*.html" . | xargs sed -i 's/?v=4"/?v=5"/g'
+```
+
+If a page still looks stale after a push even with the version bumped,
+that's a genuine caching gap — try an incognito window or a hard refresh
+(Ctrl+Shift+R / Cmd+Shift+R) to confirm.
+
 ## Previewing locally
 
 Because the pages load CSS/JS from relative paths, open `index.html`
