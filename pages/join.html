@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join — TAMU SEDS</title>
+<meta name="description" content="How to join TAMU SEDS.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="join-page">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="../assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ HERO BANNER: SEDS -> JOIN reveal ============ -->
+<section class="join-hero">
+  <h1 class="join-hero__title">
+    <span class="join-hero__acronym-only">SEDS</span>
+    <span class="join-hero__expanded">
+      <span class="join-hero__word">Join</span>
+    </span>
+  </h1>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="join-intro">
+  <div class="container">
+    <p>Informationals and general meetings are <strong>open to all</strong>, so feel free to just swing by!</p>
+    <p>If you like what you see, please consider joining us as an official member!</p>
+  </div>
+</section>
+
+<!-- ============ WHY JOIN / HOW TO JOIN ============ -->
+<section class="join-columns">
+  <div class="container">
+
+    <div class="join-col">
+      <h2 class="join-col__title">Why Join?</h2>
+      <p>You get access to all of our opportunities!</p>
+      <ul class="join-list">
+        <li>Join our <a href="design_teams.html">design teams</a>*</li>
+        <li>Go on group trips</li>
+        <li>Come to socials</li>
+        <li>Get free food</li>
+      </ul>
+      <p class="join-footnote">
+        *You don't have to be an official member to apply for our design
+        teams, but you will have to become one if you apply and are selected.
+      </p>
+    </div>
+
+    <div class="join-col">
+      <h2 class="join-col__title">How to Join</h2>
+      <ol class="join-steps">
+        <li>Fill out the <a href="#">Official Membership Form</a></li>
+        <li>
+          Once you fill out the form, you will be invited to our Discord
+          <ul class="join-list">
+            <li>Please update your profile to your first &amp; last name</li>
+          </ul>
+        </li>
+        <li>No dues needed to join <em>general meetings</em>*</li>
+      </ol>
+      <p class="join-footnote">*Dues are necessary for SAC, group trips, and project teams.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/nav-config.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

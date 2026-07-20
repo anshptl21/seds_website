@@ -2065,6 +2065,200 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 /* ============================================================
+   JOIN PAGE
+   ============================================================ */
+
+.join-page {
+  background: #000000;
+  color: #f5f5f5;
+}
+
+/* ---- Hero banner: Milky Way photo + SEDS -> JOIN reveal ---- */
+.join-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: var(--header-height);
+  padding: 40px 20px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%),
+    url('../assets/join-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.join-hero__title {
+  position: relative;
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: clamp(2rem, 5.4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.join-hero__acronym-only {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation:
+    solarSpread 1s ease forwards 0.6s,
+    solarFadeOut 0.7s ease forwards 1.6s;
+}
+
+.join-hero__expanded {
+  display: inline-flex;
+  justify-content: center;
+  opacity: 0;
+  animation: solarExpandIn 0.7s ease forwards 1.6s;
+}
+
+.join-hero__word {
+  opacity: 0;
+  transform: translateY(0.3em);
+  animation: solarWordIn 0.8s ease forwards 1.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .join-hero__acronym-only,
+  .join-hero__expanded,
+  .join-hero__word {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .join-hero__acronym-only { display: none; }
+}
+
+/* ---- Intro line above the two columns ---- */
+.join-intro {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.join-intro p {
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+  color: #f5f5f5;
+  margin: 0 0 6px;
+}
+
+.join-intro strong {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ---- Why Join / How to Join columns ---- */
+.join-columns {
+  padding: 40px 0 100px;
+}
+
+.join-columns .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 1200px;
+}
+
+.join-col__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin: 0 0 26px;
+}
+
+.join-col p {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.join-col a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.join-col a:hover { color: var(--color-accent); }
+
+.join-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.join-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.join-list li::before {
+  content: "\25AA";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.7rem;
+  color: #f5f5f5;
+}
+
+.join-steps {
+  list-style: none;
+  counter-reset: join-step;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.join-steps > li {
+  counter-increment: join-step;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.join-steps > li::before {
+  content: counter(join-step) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+.join-steps .join-list {
+  margin: 10px 0 0;
+}
+
+.join-footnote {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .join-columns .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
