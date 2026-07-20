@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEDS Solar Sail — TAMU SEDS</title>
+<meta name="description" content="TAMU SEDS Solar Sail project.">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body class="solar-page">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<!-- Background is a flat gradient + CSS starfield for now.
+     Drop a hero photo into assets/ and set it as a background-image
+     on .solar-hero (or add an <img> layered behind .solar-hero__content)
+     whenever it's ready — the gradient/stars will still show through
+     any transparent areas. -->
+<section class="solar-hero">
+  <div class="container solar-hero__content">
+    <h1 class="solar-hero__title">Solar Sail</h1>
+  </div>
+</section>
+
+<!-- ============ FADE-IN TEXT (on scroll) ============ -->
+<section class="solar-fade">
+  <div class="container">
+    <p class="solar-fade__text reveal reveal--fade">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+  </div>
+</section>
+
+<!-- ============ IMAGE + TEXT (slide in on scroll) ============ -->
+<section class="solar-row">
+  <div class="container">
+    <div class="solar-row__text reveal reveal--right">
+      <h2>Excepteur Sint</h2>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
+        omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+      </p>
+      <p>
+        Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo.
+      </p>
+    </div>
+    <div class="solar-row__media reveal reveal--left">Image placeholder — Solar Sail</div>
+  </div>
+</section>
+
+<!-- ============ COLLAPSIBLE: SUPPORT US ============ -->
+<section class="solar-support">
+  <div class="container">
+    <details class="solar-accordion">
+      <summary class="solar-accordion__summary">
+        Support Us
+        <span class="solar-accordion__chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="solar-accordion__body">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim
+          ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+          sed quia consequuntur magni dolores eos qui ratione voluptatem
+          sequi nesciunt.
+        </p>
+        <p>
+          Replace this with real sponsorship / donation information whenever
+          it's ready — for example a <a href="#">donation link</a> or
+          sponsorship tier breakdown.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/nav-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
