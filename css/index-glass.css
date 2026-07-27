@@ -61,8 +61,9 @@
 /* ---- Every full-width section shares the exact same glass tint,
    full-bleed, with no radius/shadow/margin between them — so
    scrolling from one section to the next feels seamless instead
-   of like a stack of separate cards. ---- */
-.glass-preview .hero,
+   of like a stack of separate cards. The hero is intentionally
+   excluded: it shows the fixed background photo crisp/unblurred,
+   with glass starting at the Mission Statement section below it. ---- */
 .glass-preview .statement,
 .glass-preview .schedule,
 .glass-preview .about-row,
@@ -76,9 +77,11 @@
 
 /* The hero previously carried its own photo + gradient background;
    now the fixed .bg-fixed layer supplies the imagery instead, so
-   just neutralize that here without touching layout/animation. */
+   just neutralize that here without touching layout/animation.
+   No blur/tint applied — the fixed photo shows through as-is. */
 .glass-preview .hero {
   background-image: none;
+  background: transparent;
 }
 
 /* Thin dividers read as a "break" against a continuous glass
