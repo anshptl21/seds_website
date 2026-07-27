@@ -779,7 +779,7 @@ body.sidebar-open .sidebar__item {
   display: flex;
   align-items: flex-start;
   gap: clamp(28px, 4vw, 64px);
-  padding: 34px clamp(24px, 6vw, 56px) 16px;
+  padding: 54px clamp(24px, 6vw, 56px) 16px;
   width: max-content;
   margin: 0 auto;
 }
@@ -789,7 +789,7 @@ body.sidebar-open .sidebar__item {
   position: absolute;
   left: 0;
   right: 0;
-  top: 46px;
+  top: 66px;
   height: 1px;
   background: rgba(255, 255, 255, 0.25);
   z-index: 0;
@@ -803,6 +803,24 @@ body.sidebar-open .sidebar__item {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Permanent date label above a dot — always visible, unaffected by
+   hover/click state. Absolutely positioned so items without a date
+   yet don't shift; just add this span as the first child of any
+   .mtl-item to give that milestone a date. */
+.mtl-date {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .mtl-dot-slot {
