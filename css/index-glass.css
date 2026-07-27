@@ -1,0 +1,108 @@
+/*
+  ============================================================
+  GLASS PREVIEW OVERRIDE STYLESHEET
+  ============================================================
+  Only ever linked from index_copy.html. Everything here is scoped
+  under .glass-preview (set on <body> in that file) so this can
+  never accidentally affect index.html or any other page, even if
+  this file gets linked somewhere by mistake later.
+
+  What it does:
+  - Adds one fixed, static background photo behind the ENTIRE page
+    (no scroll-linked zoom or parallax — the image never moves).
+  - Turns every section's background into the same translucent,
+    blurred "glass" tint, edge-to-edge with no border/radius/shadow,
+    so sections read as one continuous frosted surface rather than
+    a stack of separate boxed panels.
+  - All existing animations (hero reveal, mission timeline scroll +
+    halo + click-to-expand, Accomplishments slide-in, board hover,
+    partner flip cards) are untouched — this file only overrides
+    backgrounds and a few text colors for contrast.
+  ============================================================
+*/
+
+.glass-preview {
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-blur: blur(18px) saturate(150%);
+  background: transparent;
+}
+
+/* ---- Fixed backdrop photo (static — no zoom, no parallax) ---- */
+.glass-preview .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/hero-nebula.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.glass-preview .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 40%,
+    rgba(0, 0, 0, 0.75) 100%);
+}
+
+/* ---- Header: same glass treatment as the sections below it ---- */
+.glass-preview .site-header {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: none;
+}
+.glass-preview .site-header--scrolled {
+  background: var(--glass-bg);
+  border-bottom: none;
+}
+
+/* ---- Every full-width section shares the exact same glass tint,
+   full-bleed, with no radius/shadow/margin between them — so
+   scrolling from one section to the next feels seamless instead
+   of like a stack of separate cards. ---- */
+.glass-preview .hero,
+.glass-preview .statement,
+.glass-preview .schedule,
+.glass-preview .about-row,
+.glass-preview .board,
+.glass-preview .partners,
+.glass-preview .site-footer {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* The hero previously carried its own photo + gradient background;
+   now the fixed .bg-fixed layer supplies the imagery instead, so
+   just neutralize that here without touching layout/animation. */
+.glass-preview .hero {
+  background-image: none;
+}
+
+/* Thin dividers read as a "break" against a continuous glass
+   surface — soften it so it's barely visible, not removed. */
+.glass-preview .divider {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Contrast tweaks so text stays readable over a busier photo
+   background than the site's original flat/gradient one. ---- */
+.glass-preview .statement__text,
+.glass-preview .about-row__text p,
+.glass-preview .schedule__title,
+.glass-preview .board__title,
+.glass-preview .partners__title {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.glass-preview .hero__eyebrow,
+.glass-preview .hero__headline {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* Placeholder swatches (board photos, accomplishments media, timeline
+   boxes) keep their own existing look — only the big section-level
+   backgrounds change here, per the "keep sections the same, just
+   glass-ify the background" brief. */
