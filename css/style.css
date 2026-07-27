@@ -779,7 +779,7 @@ body.sidebar-open .sidebar__item {
   display: flex;
   align-items: flex-start;
   gap: clamp(28px, 4vw, 64px);
-  padding: 54px clamp(24px, 6vw, 56px) 16px;
+  padding: 64px clamp(24px, 6vw, 56px) 16px;
   width: max-content;
   margin: 0 auto;
 }
@@ -789,7 +789,7 @@ body.sidebar-open .sidebar__item {
   position: absolute;
   left: 0;
   right: 0;
-  top: 66px;
+  top: 76px;
   height: 1px;
   background: rgba(255, 255, 255, 0.25);
   z-index: 0;
@@ -808,10 +808,11 @@ body.sidebar-open .sidebar__item {
 /* Permanent date label above a dot — always visible, unaffected by
    hover/click state. Absolutely positioned so items without a date
    yet don't shift; just add this span as the first child of any
-   .mtl-item to give that milestone a date. */
+   .mtl-item to give that milestone a date. Sits well clear of the
+   dot's hover-halo ring (which extends ~23px above the dot center). */
 .mtl-date {
   position: absolute;
-  top: -20px;
+  top: -34px;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Montserrat', sans-serif;
