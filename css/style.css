@@ -2732,6 +2732,7 @@ body.lightbox-locked { overflow: hidden; }
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: 8px;
   background: #10131c;
 }
 
