@@ -1763,10 +1763,8 @@ body.sidebar-open .sidebar__item {
 .officer-card {
   position: relative;
   aspect-ratio: 1 / 1;
-  border: 4px solid #FFD800;
   border-radius: 2px;
   overflow: hidden;
-  background: #141414;
 }
 
 .officer-card__photo {
@@ -1774,7 +1772,6 @@ body.sidebar-open .sidebar__item {
   inset: 0;
   background-size: cover;
   background-position: center top;
-  background-color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1861,7 +1858,6 @@ body.sidebar-open .sidebar__item {
 }
 @media (max-width: 700px) {
   .officers-grid__rows { grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .officer-card { border-width: 3px; }
 }
 @media (max-width: 420px) {
   .officers-grid__rows { grid-template-columns: 1fr; max-width: 320px; }
