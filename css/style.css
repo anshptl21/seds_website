@@ -916,8 +916,18 @@ body.sidebar-open .sidebar__item {
 }
 
 .about-hero {
-  padding: calc(var(--header-height) + 60px) 0 20px;
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + 40px) 0 40px;
   text-align: center;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%),
+    url('../assets/about-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-hero__title {
