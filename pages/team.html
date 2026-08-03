@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team — TAMU SEDS</title>
 <meta name="description" content="Meet the TAMU SEDS officer team.">
-<link rel="stylesheet" href="../css/style.css?v=13">
+<link rel="stylesheet" href="../css/style.css?v=14">
 </head>
 <body class="officers-page">
 
@@ -36,16 +36,16 @@
   <div class="container">
     <h1 class="officers-hero__title">Meet the Team</h1>
     <p class="officers-hero__intro">
-      TAMU SEDS is run by a team of student officers. Hover over a photo to
-      see each officer's role.
+      TAMU SEDS is run by a team of student officers.
     </p>
   </div>
 </section>
 
-<!-- ============ OFFICER GRID (4 rows x 4) ============ -->
-<!-- Each .officer-card__photo is a placeholder box — replace with a real
-     photo by adding: style="background-image:url('../assets/officers/NAME.jpg')"
-     Photos are intentionally left blank for now. -->
+<!-- ============ OFFICER GRID ============ -->
+<!-- Each card's photo is a real <img> filling a 1:1 square via
+     object-fit: cover (see .officer-card__photo img in style.css).
+     Name and role are always visible over a bottom gradient scrim;
+     social icons fade in on hover. -->
 <section class="officers-grid">
   <div class="container">
     <div class="officers-grid__rows">
@@ -303,8 +303,8 @@
   </div>
 </footer>
 
-<script src="../js/nav-config.js?v=13"></script>
-<script src="../js/main.js?v=13"></script>
+<script src="../js/nav-config.js?v=14"></script>
+<script src="../js/main.js?v=14"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

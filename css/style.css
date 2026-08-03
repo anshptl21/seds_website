@@ -1765,7 +1765,7 @@ body.sidebar-open .sidebar__item {
 .officers-grid__rows {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1773,29 +1773,20 @@ body.sidebar-open .sidebar__item {
 .officer-card {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 2px;
   overflow: hidden;
 }
 
 .officer-card__photo {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center top;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-size: 0.75rem;
-  letter-spacing: 0.03em;
-  text-align: center;
-  padding: 12px;
-  transition: opacity 0.35s ease;
 }
 
-.officer-card:hover .officer-card__photo,
-.officer-card:focus-within .officer-card__photo {
-  opacity: 0.35;
+.officer-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .officer-card__overlay {
@@ -1803,56 +1794,64 @@ body.sidebar-open .sidebar__item {
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  gap: 6px;
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.officer-card:hover .officer-card__overlay,
-.officer-card:focus-within .officer-card__overlay {
-  transform: translateX(0);
-  opacity: 1;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  padding: 18px;
+  gap: 2px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0) 75%
+  );
 }
 
 .officer-card__role {
+  order: 2;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 500;
+  color: #d8d8d8;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.3;
 }
 
 .officer-card__year {
+  order: 1;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: #e2453c;
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  margin: 0 0 6px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .officer-card__socials {
+  order: 3;
   display: flex;
-  gap: 12px;
-  margin-top: 4px;
+  gap: 10px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.officer-card:hover .officer-card__socials,
+.officer-card:focus-within .officer-card__socials {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .officer-social {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -1861,20 +1860,20 @@ body.sidebar-open .sidebar__item {
   color: #000;
   transform: translateY(-2px);
 }
-.officer-social svg { width: 15px; height: 15px; fill: currentColor; }
+.officer-social svg { width: 14px; height: 14px; fill: currentColor; }
 
 @media (max-width: 980px) {
   .officers-grid__rows { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 700px) {
-  .officers-grid__rows { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .officers-grid__rows { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 420px) {
   .officers-grid__rows { grid-template-columns: 1fr; max-width: 320px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .officer-card__overlay { transition: opacity 0.2s linear; transform: none !important; }
+  .officer-card__socials { transition: none; opacity: 1; transform: none; }
 }
 
 /* ============================================================
