@@ -2954,6 +2954,24 @@ body.lightbox-locked { overflow: hidden; }
     #060203;
 }
 
+.sac-hero::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background-image: url('../assets/sac-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(70%, 640px);
+  filter: blur(6px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.sac-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 .sac-hero__title {
   position: relative;
   display: block;
