@@ -3756,6 +3756,119 @@ body.lightbox-locked { overflow: hidden; }
   .luna-subteam__list { transition: none; }
 }
 
+/* ============================================================
+   SUBTEAMS — SOLAR SAIL (yellow variant)
+   ============================================================ */
+
+.solar-subteams {
+  padding: 10px 0 90px;
+}
+
+.solar-subteams__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.solar-subteam {
+  flex: 0 0 auto;
+  width: 220px;
+  background: #FFD800;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.solar-subteam__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #0a0a0a;
+  text-align: left;
+}
+
+.solar-subteam__chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: #0a0a0a;
+  transition: transform 0.3s ease;
+}
+.solar-subteam__chevron svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.solar-subteam.is-open .solar-subteam__chevron {
+  transform: rotate(180deg);
+}
+
+.solar-subteam__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
+}
+
+.solar-subteam.is-open .solar-subteam__list {
+  max-height: 320px;
+  opacity: 1;
+  padding: 0 20px 20px;
+}
+
+.solar-subteam__list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #0a0a0a;
+  line-height: 1.4;
+}
+
+.solar-subteam__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0a0a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-subteam__chevron,
+  .solar-subteam__list { transition: none; }
+}
+
+/* ============================================================
+   PARTNER FLIP CARDS — page-scoped accent colors
+   (structure/mechanics reused from the global .partner-flip
+   component; only the back-face border color changes per page)
+   ============================================================ */
+
+.luna-page .partner-flip__back { border-color: #bfeeff; }
+.solar-page .partner-flip__back { border-color: #FFD800; }
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }

@@ -2,9 +2,13 @@
   ============================================================
   SUBTEAM TOGGLE
   ============================================================
-  Wires up click-to-expand behavior for .luna-subteam chip cards.
-  Clicking a chip's toggle button expands/collapses its member
-  list. Each card toggles independently.
+  Wires up click-to-expand behavior for expandable subteam chip
+  cards (e.g. .luna-subteam on sedslunabotics.html, .solar-subteam
+  on sedssolarsail.html). Clicking a chip's toggle button toggles
+  its "is-open" class and expands/collapses its member list.
+  Each card toggles independently. Works for any card whose
+  toggle button's class ends in "__toggle" and whose card class
+  ends in "-subteam" — no page-specific wiring needed.
 
   Markup pattern:
     <div class="luna-subteam">
@@ -23,12 +27,12 @@
   "use strict";
 
   function initSubteamToggles() {
-    const toggles = document.querySelectorAll(".luna-subteam__toggle");
+    const toggles = document.querySelectorAll('[class$="-subteam__toggle"]');
     if (!toggles.length) return;
 
     toggles.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const card = btn.closest(".luna-subteam");
+        const card = btn.parentElement;
         if (!card) return;
         const isOpen = card.classList.toggle("is-open");
         btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
