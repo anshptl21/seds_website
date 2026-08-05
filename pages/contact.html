@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — TAMU SEDS</title>
-<link rel="stylesheet" href="../css/style.css?v=22">
+<link rel="stylesheet" href="../css/style.css?v=23">
 </head>
 <body>
 
@@ -35,10 +35,38 @@
   <div class="container">
     <h1 class="schedule__title" style="margin-bottom: 24px;">CONTACT</h1>
     <p class="statement__text">
-      Replace this paragraph with the page's content. Reuse classes from
-      style.css (.statement, .schedule, .board, .btn, etc.) to stay consistent
-      with the rest of the site, or add new ones as needed.
+      Have a question or want to get in touch? Send us a message below and
+      we'll get back to you.
     </p>
+  </div>
+</section>
+
+<!-- ============ CONTACT FORM ============ -->
+<!-- No backend — submitting opens a pre-filled email draft via mailto:
+     to tamu.seds.cstat@gmail.com, then swaps the form for a thank-you
+     message. -->
+<section class="contact-form-section">
+  <div class="container">
+    <form id="contact-form" class="contact-form">
+      <div class="contact-form__field">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name">
+      </div>
+      <div class="contact-form__field">
+        <label for="contact-email">Email <span class="contact-form__required">*</span></label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="contact-form__field">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="6"></textarea>
+      </div>
+      <button type="submit" class="btn contact-form__submit">Send Message</button>
+    </form>
+
+    <div id="contact-thankyou" class="contact-thankyou" hidden>
+      <h2>Thank you!</h2>
+      <p>Your message is on its way. We'll get back to you soon.</p>
+    </div>
   </div>
 </section>
 <!-- ============ END PAGE CONTENT ============ -->
@@ -73,8 +101,39 @@
   </div>
 </footer>
 
-<script src="../js/nav-config.js?v=22"></script>
-<script src="../js/main.js?v=22"></script>
+<script src="../js/nav-config.js?v=23"></script>
+<script src="../js/main.js?v=23"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var thankYou = document.getElementById('contact-thankyou');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('contact-name').value.trim();
+    var email = document.getElementById('contact-email').value.trim();
+    var message = document.getElementById('contact-message').value.trim();
+
+    var subject = encodeURIComponent('Message from ' + (name || 'the TAMU SEDS website'));
+    var bodyLines = [];
+    if (name) bodyLines.push('Name: ' + name);
+    bodyLines.push('Email: ' + email);
+    if (message) bodyLines.push('', message);
+
+    var mailtoUrl =
+      'mailto:tamu.seds.cstat@gmail.com' +
+      '?subject=' + subject +
+      '&body=' + encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = mailtoUrl;
+
+    form.hidden = true;
+    thankYou.hidden = false;
+  });
+})();
+</script>
 </body>
 </html>
