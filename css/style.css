@@ -717,6 +717,71 @@ body.sidebar-open .sidebar__item {
   padding: 24px;
 }
 
+.footer__signup {
+  flex-direction: column;
+  gap: 6px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.15);
+  padding: 36px 24px;
+  max-width: 520px;
+}
+
+.footer__signup-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer__signup-intro {
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 18px;
+  text-align: center;
+}
+
+.footer__signup-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.footer__signup-form input {
+  flex: 1 1 180px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.footer__signup-form input::placeholder {
+  color: var(--color-text-dim);
+}
+
+.footer__signup-form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.footer__signup-submit {
+  flex: 0 0 auto;
+  padding: 12px 26px;
+}
+
+.footer__signup-msg {
+  min-height: 1.2em;
+  margin: 14px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+}
+
 .footer__bottom {
   margin-top: 40px;
   font-size: 0.75rem;
