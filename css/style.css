@@ -3950,6 +3950,61 @@ body.lightbox-locked { overflow: hidden; }
   line-height: 1.6;
 }
 
+/* ============================================================
+   HOMEPAGE — extend hero background down the whole page
+   ============================================================
+   Scoped to .home-page (index.html only) so nothing else on the
+   site is affected. The hero photo now lives in a fixed, full-page
+   layer behind everything instead of being confined to the hero's
+   own box, so the same image continues seamlessly behind every
+   section as you scroll — no zoom, no parallax, it just stays put.
+   ============================================================ */
+
+.home-page {
+  background: #05070d;
+}
+
+.home-page .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/hero-nebula.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.home-page .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* The hero previously carried its own copy of this photo; now the
+   fixed layer supplies the imagery instead, so this just removes
+   the duplicate image (layout/animation untouched). */
+.home-page .hero {
+  background-image: none;
+  background: transparent;
+}
+
+/* Every section below the hero gets a light, uniform dark tint so
+   text stays legible while the same fixed photo shows through
+   behind it — no blur, no per-section boxing, just a consistent
+   wash down the whole page. */
+.home-page .statement,
+.home-page .schedule,
+.home-page .about-row,
+.home-page .board,
+.home-page .partners,
+.home-page .site-footer {
+  background: rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
