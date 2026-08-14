@@ -509,13 +509,11 @@ body.sidebar-open .sidebar__item {
   width: 100%;
   aspect-ratio: 3 / 4;
   box-sizing: border-box;
-  border: 10px solid #ffffff;
+  border: 2px solid white;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 18px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-  transform: rotate(2deg);
-  transition: transform 0.3s ease;
 }
 
 .board__card:nth-child(2) .board__photo-wrap { transform: rotate(-2deg); }
