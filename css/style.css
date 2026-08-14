@@ -4202,29 +4202,41 @@ body.lightbox-locked { overflow: hidden; }
 /* ============================================================
    DESIGN TEAM ICON CARDS — design_teams.html
    ============================================================
-   4 cards in a row, each a plain line-art icon + name. Hover
-   tints the card dark red; clicking opens a shared panel below
-   the row with that team's description and an apply/learn-more
-   button. Clicking the same card again closes the panel.
+   4 cards stacked vertically, centered, with spacing between
+   them. Hover tints a card dark red. Clicking a card expands a
+   panel to its right with that team's description and an
+   apply/learn-more button — because the row stays centered as a
+   whole, the card visually shifts left as the panel grows next
+   to it. Each card/panel pair toggles independently.
    ============================================================ */
 
 .dt-cards {
   padding: 50px 0 90px;
 }
 
-.dt-cards__row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  max-width: 1100px;
-  margin: 0 auto;
+.dt-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.dt-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
 }
 
 .dt-card {
   position: relative;
+  flex: 0 0 220px;
+  width: 220px;
+  aspect-ratio: 1;
   background: #000000;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 56px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4232,23 +4244,25 @@ body.lightbox-locked { overflow: hidden; }
   gap: 16px;
   cursor: pointer;
   text-align: center;
-  transition: background 0.3s ease;
-}
-
-.dt-card:last-child {
-  border-right: none;
+  transition: background 0.3s ease, border-radius 0.4s ease;
 }
 
 .dt-card:hover,
 .dt-card:focus-visible,
-.dt-card.is-active {
-  background: rgba(139, 0, 0, 0.45);
+.dt-row.is-open .dt-card {
+  background: rgba(139, 0, 0, 0.55);
   outline: none;
 }
 
+.dt-row.is-open .dt-card {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
 .dt-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   color: #ffffff;
 }
 .dt-card__icon svg {
@@ -4268,48 +4282,67 @@ body.lightbox-locked { overflow: hidden; }
   color: #ffffff;
 }
 
-.dt-panel {
-  max-width: 1100px;
-  margin: 0 auto;
-  max-height: 0;
+.dt-panel-inline {
+  flex: 0 0 0;
+  width: 0;
   opacity: 0;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-top: none;
-  background: rgba(139, 0, 0, 0.12);
-  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: none;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background: #cd6b6b;
+  padding: 0;
+  transition: width 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
 }
 
-.dt-panel.is-open {
-  max-height: 320px;
+.dt-row.is-open .dt-panel-inline {
+  width: 380px;
   opacity: 1;
-  padding: 32px 28px;
+  padding: 28px 32px;
 }
 
-.dt-panel__desc {
-  max-width: 720px;
-  margin: 0 auto 22px;
-  color: #e8e8e8;
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: center;
+.dt-panel-inline__desc {
+  color: #2a0a06;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0 0 20px;
 }
 
-.dt-panel__apply {
-  display: block;
-  width: max-content;
-  margin: 0 auto;
+.dt-panel-inline__apply {
+  display: inline-block;
+  background: transparent;
+  border-color: #2a0a06;
+  color: #2a0a06;
+}
+.dt-panel-inline__apply:hover {
+  background: #2a0a06;
+  color: #cd6b6b;
 }
 
 @media (max-width: 700px) {
-  .dt-cards__row { grid-template-columns: repeat(2, 1fr); }
-  .dt-card { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
-  .dt-card:nth-child(2n) { border-right: none; }
+  .dt-row.is-open { flex-direction: column; align-items: center; }
+  .dt-row.is-open .dt-card {
+    border-radius: 24px 24px 0 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: none;
+  }
+  .dt-row.is-open .dt-panel-inline {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 0 0 24px 24px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .dt-card,
-  .dt-panel { transition: none; }
+  .dt-panel-inline { transition: none; }
 }
 
 @media (max-width: 640px) {
