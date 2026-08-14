@@ -294,14 +294,72 @@
       </a>
     </div>
 
-    <div class="footer__embed">
-      <!-- Replace with a real embed: e.g. a Google Form, a map iframe, or a newsletter signup -->
-      Add a form, map, or newsletter embed here
+    <!-- No backend on a static site can run real SQL, so this posts to a
+         Google Apps Script Web App instead: it appends each signup as a
+         row in a Google Sheet (queryable later the same way discussed
+         for the member portal) AND automatically emails the submission
+         to tamu.seds.cstat@gmail.com. Swap SCRIPT_URL in the script
+         below once the Apps Script is deployed. -->
+    <div class="footer__embed footer__signup">
+      <h3 class="footer__signup-title">Stay in the loop</h3>
+      <p class="footer__signup-intro">Join our mailing list for updates on meetings and events.</p>
+      <form id="signup-form" class="footer__signup-form">
+        <input type="text" id="signup-name" name="name" placeholder="Name" autocomplete="name">
+        <input type="email" id="signup-email" name="email" placeholder="Email" autocomplete="email" required>
+        <button type="submit" class="btn footer__signup-submit">Sign Up</button>
+      </form>
+      <p id="signup-msg" class="footer__signup-msg"></p>
     </div>
 
     <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
   </div>
 </footer>
+
+<script src="js/nav-config.js?v=31"></script>
+<script src="js/main.js?v=31"></script>
+<script src="js/mission-timeline.js?v=31"></script>
+<script src="js/scroll-reveal.js?v=31"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  // TODO: replace with the deployed Apps Script Web App URL (see the
+  // backend code provided separately — deploy it, then paste the URL here).
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby462ku4jANsLWdQGISNx0H9Ivo2KtkcvIwj1sxBZyri3mw_w7CybmIM4q6Q8dri2DL/exec';
+
+  var form = document.getElementById('signup-form');
+  var msg = document.getElementById('signup-msg');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('signup-name').value.trim();
+    var email = document.getElementById('signup-email').value.trim();
+    var submitBtn = form.querySelector('.footer__signup-submit');
+
+    submitBtn.disabled = true;
+    msg.textContent = 'Sending...';
+
+    var body = new URLSearchParams({ name: name, email: email });
+
+    fetch(SCRIPT_URL, { method: 'POST', body: body })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.hidden = true;
+          msg.textContent = "Thanks — you're on the list!";
+        } else {
+          msg.textContent = data.error || 'Something went wrong. Please try again.';
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(function () {
+        msg.textContent = 'Something went wrong. Please try again.';
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
 
 <script src="../js/nav-config.js?v=31"></script>
 <script src="../js/main.js?v=31"></script>
