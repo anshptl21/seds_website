@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAMU SEDS — Students for the Exploration and Development of Space</title>
 <meta name="description" content="TAMU SEDS connects students of all backgrounds with a passion for space exploration.">
-<link rel="stylesheet" href="css/style.css?v=27">
+<link rel="stylesheet" href="css/style.css?v=28">
 </head>
 <body class="home-page">
 
@@ -300,16 +300,16 @@ Astromaterials Research and Exploration Science (ARES) Division
   </div>
 </footer>
 
-<script src="js/nav-config.js?v=27"></script>
-<script src="js/main.js?v=27"></script>
-<script src="js/mission-timeline.js?v=27"></script>
-<script src="js/scroll-reveal.js?v=27"></script>
+<script src="js/nav-config.js?v=28"></script>
+<script src="js/main.js?v=28"></script>
+<script src="js/mission-timeline.js?v=28"></script>
+<script src="js/scroll-reveal.js?v=28"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script>
 (function () {
   // TODO: replace with the deployed Apps Script Web App URL (see the
   // backend code provided separately — deploy it, then paste the URL here).
-  var SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby462ku4jANsLWdQGISNx0H9Ivo2KtkcvIwj1sxBZyri3mw_w7CybmIM4q6Q8dri2DL/exec';
 
   var form = document.getElementById('signup-form');
   var msg = document.getElementById('signup-msg');
@@ -317,11 +317,6 @@ Astromaterials Research and Exploration Science (ARES) Division
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    if (SCRIPT_URL.indexOf('PASTE_YOUR') === 0) {
-      msg.textContent = 'Signup backend not connected yet.';
-      return;
-    }
 
     var name = document.getElementById('signup-name').value.trim();
     var email = document.getElementById('signup-email').value.trim();
