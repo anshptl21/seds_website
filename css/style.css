@@ -4070,6 +4070,119 @@ body.lightbox-locked { overflow: hidden; }
   background: rgba(0, 0, 0, 0.35);
 }
 
+/* ============================================================
+   EXTEND HERO BACKGROUND — Lunabotics, About, Speakers, Join
+   ============================================================
+   Same technique as .home-page: the hero photo lives in a fixed,
+   full-page layer behind everything instead of being confined to
+   the hero's own box, so it continues seamlessly behind every
+   section as you scroll. No zoom, no parallax — completely static.
+   ============================================================ */
+
+/* ---- Lunabotics ---- */
+.luna-page .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/lunabotics-hero.png');
+  background-size: cover;
+  background-position: center;
+}
+.luna-page .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.8) 100%);
+}
+.luna-page .luna-hero {
+  background-image: none;
+  background: transparent;
+}
+.luna-page .luna-section-intro,
+.luna-page .luna-team,
+.luna-page .luna-subteams,
+.luna-page .luna-accomplish,
+.luna-page .partners,
+.luna-page .luna-gallery,
+.luna-page .luna-support,
+.luna-page .site-footer {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---- About ---- */
+.about-page .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/about-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.about-page .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.8) 100%);
+}
+.about-page .about-hero {
+  background-image: none;
+  background: transparent;
+}
+.about-page .about-row,
+.about-page .site-footer {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Speakers ---- */
+/* .mission-row--light panels intentionally stay solid white (they're
+   built for readable dark-on-white speaker bios); only the hero,
+   dark panels, and footer pick up the extended background. */
+.mission-page .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/speakers-hero.webp');
+  background-size: cover;
+  background-position: center;
+}
+.mission-page .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.8) 100%);
+}
+.mission-page .mission-hero {
+  background-image: none;
+  background: transparent;
+}
+.mission-page .mission-row--dark,
+.mission-page .site-footer {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Join ---- */
+.join-page .bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/join-hero.png');
+  background-size: cover;
+  background-position: center;
+}
+.join-page .bg-fixed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.85) 100%);
+}
+.join-page .join-hero {
+  background: transparent;
+}
+.join-page .join-hero::before {
+  content: none;
+}
+.join-page .join-intro,
+.join-page .join-columns,
+.join-page .site-footer {
+  background: rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
