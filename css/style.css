@@ -1265,9 +1265,9 @@ body.sidebar-open .sidebar__item {
    ============================================================ */
 
 .team-page {
-  --team-accent: #ff7a3c;
-  --team-accent-dim: #d9581f;
-  --team-bg-deep: #150a06;
+  --team-accent: #9fd6dd;
+  --team-accent-dim: #6fa9b2;
+  --team-bg-deep: #060d10;
   position: relative;
   background: var(--team-bg-deep);
   min-height: 100vh;
@@ -1280,7 +1280,7 @@ body.sidebar-open .sidebar__item {
   right: 0;
   bottom: 0;
   width: min(46vw, 620px);
-  background-image: url('../assets/mars.png');
+  background-image: url('../assets/team-crescent.jpg');
   background-size: cover;
   background-position: left center;
   filter: blur(6px);
@@ -1296,7 +1296,7 @@ body.sidebar-open .sidebar__item {
   z-index: 1;
   padding: calc(var(--header-height) + 46px) 0 40px;
   text-align: center;
-  background: linear-gradient(180deg, #5c2408 0%, #2a1006 55%, transparent 100%);
+  background: linear-gradient(180deg, #0e2a30 0%, #071418 55%, transparent 100%);
 }
 
 .team-banner__title {
@@ -4250,7 +4250,7 @@ body.lightbox-locked { overflow: hidden; }
 .dt-card:hover,
 .dt-card:focus-visible,
 .dt-row.is-open .dt-card {
-  background: rgba(139, 0, 0, 0.55);
+  background: rgba(20, 60, 75, 0.75);
   outline: none;
 }
 
@@ -4295,7 +4295,7 @@ body.lightbox-locked { overflow: hidden; }
   border-left: none;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
-  background: #cd6b6b;
+  background: #9fd6dd;
   padding: 0;
   transition: width 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
 }
@@ -4307,7 +4307,7 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 .dt-panel-inline__desc {
-  color: #2a0a06;
+  color: #0a1f26;
   font-size: 0.95rem;
   line-height: 1.65;
   margin: 0 0 20px;
@@ -4316,12 +4316,12 @@ body.lightbox-locked { overflow: hidden; }
 .dt-panel-inline__apply {
   display: inline-block;
   background: transparent;
-  border-color: #2a0a06;
-  color: #2a0a06;
+  border-color: #0a1f26;
+  color: #0a1f26;
 }
 .dt-panel-inline__apply:hover {
-  background: #2a0a06;
-  color: #cd6b6b;
+  background: #0a1f26;
+  color: #9fd6dd;
 }
 
 @media (max-width: 700px) {
