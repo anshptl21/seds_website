@@ -514,13 +514,13 @@ body.sidebar-open .sidebar__item {
   overflow: hidden;
   margin-bottom: 18px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-  transform: rotate(-2deg);
+  transform: rotate(2deg);
   transition: transform 0.3s ease;
 }
 
-.board__card:nth-child(2) .board__photo-wrap { transform: rotate(2deg); }
-.board__card:nth-child(3) .board__photo-wrap { transform: rotate(-1.5deg); }
-.board__card:nth-child(4) .board__photo-wrap { transform: rotate(1.5deg); }
+.board__card:nth-child(2) .board__photo-wrap { transform: rotate(-2deg); }
+.board__card:nth-child(3) .board__photo-wrap { transform: rotate(1.5deg); }
+.board__card:nth-child(4) .board__photo-wrap { transform: rotate(-1.5deg); }
 
 .board__card:hover .board__photo-wrap,
 .board__card:focus-within .board__photo-wrap {
