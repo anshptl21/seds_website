@@ -4443,12 +4443,24 @@ body.lightbox-locked { overflow: hidden; }
   text-decoration: none;
 }
 
+.proj-card {
+  --proj-color: #8b0000;
+}
+.proj-card--solar { --proj-color: #FFD800; }
+.proj-card--luna  { --proj-color: rgb(191, 238, 255); }
+.proj-card--dt    { --proj-color: #6fa9b2; }
+
 .proj-card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 0, 0, 0.9) 0%, rgba(139, 0, 0, 0.5) 42%, rgba(139, 0, 0, 0) 70%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--proj-color) 90%, transparent) 0%,
+    color-mix(in srgb, var(--proj-color) 50%, transparent) 42%,
+    transparent 70%
+  );
   transform: scale(0);
   transition: transform 0.5s ease;
   z-index: 0;
@@ -4465,7 +4477,7 @@ body.lightbox-locked { overflow: hidden; }
   z-index: 1;
   width: 64px;
   height: 64px;
-  color: #8b0000;
+  color: var(--proj-color);
   transition: color 0.35s ease;
 }
 .proj-card__icon svg {
