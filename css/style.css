@@ -4042,7 +4042,7 @@ body.lightbox-locked { overflow: hidden; }
    ============================================================ */
 
 .home-page {
-  background: #05070d;
+  background: #000000;
 }
 
 .home-page .bg-fixed {
@@ -4073,17 +4073,18 @@ body.lightbox-locked { overflow: hidden; }
   background: transparent;
 }
 
-/* Every section below the hero gets a light, uniform dark tint so
-   text stays legible while the same fixed photo shows through
-   behind it — no blur, no per-section boxing, just a consistent
-   wash down the whole page. */
+/* Every section below the hero is fully opaque black, so the fixed
+   background photo only remains visible behind the hero itself —
+   everywhere else it's completely covered. */
 .home-page .statement,
 .home-page .schedule,
 .home-page .about-row,
 .home-page .board,
 .home-page .partners,
+.home-page .partners-static,
+.home-page .proj-cards,
 .home-page .site-footer {
-  background: rgba(0, 0, 0, 0.35);
+  background: #000000;
 }
 
 /* ============================================================
