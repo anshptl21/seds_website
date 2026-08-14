@@ -707,7 +707,8 @@ body.sidebar-open .sidebar__item {
   max-width: 1100px;
   margin: 0 auto;
   min-height: 160px;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1069,7 +1070,8 @@ body.sidebar-open .sidebar__item {
   width: 88px;
   height: 88px;
   flex-shrink: 0;
-  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1085,7 +1087,8 @@ body.sidebar-open .sidebar__item {
 /* Image placeholder — swap for a real <img> once photos are ready */
 .about-row__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1225,7 +1228,8 @@ body.sidebar-open .sidebar__item {
 /* Image placeholder — swap for a real <img> once photos are ready */
 .mission-row__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1543,7 +1547,8 @@ body.sidebar-open .sidebar__item {
 
 .solar-row__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(255, 216, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -2158,7 +2163,8 @@ body.sidebar-open .sidebar__item {
 
 .luna-accomplish__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(191, 238, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -2785,7 +2791,8 @@ body.lightbox-locked { overflow: hidden; }
 
 .snf-row__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(250, 185, 87, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -3171,7 +3178,8 @@ body.lightbox-locked { overflow: hidden; }
 
 .sac-row__media {
   aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
