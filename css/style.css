@@ -4166,21 +4166,7 @@ body.lightbox-locked { overflow: hidden; }
 
 /* ---- Lunabotics ---- */
 .luna-page .bg-fixed {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('../assets/lunabotics-hero.png');
-  background-size: cover;
-  background-position: center;
-}
-.luna-page .bg-fixed__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.8) 100%);
-}
-.luna-page .luna-hero {
-  background-image: none;
-  background: transparent;
+  display: none;
 }
 .luna-page .luna-section-intro,
 .luna-page .luna-team,
@@ -4190,7 +4176,7 @@ body.lightbox-locked { overflow: hidden; }
 .luna-page .luna-gallery,
 .luna-page .luna-support,
 .luna-page .site-footer {
-  background: rgba(0, 0, 0, 0.35);
+  background: #000000;
 }
 
 /* ---- About ---- */
