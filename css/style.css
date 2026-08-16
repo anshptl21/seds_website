@@ -4360,7 +4360,7 @@ body.lightbox-locked { overflow: hidden; }
 
 .partners-static__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(160px, 220px));
+  grid-template-columns: repeat(2, minmax(160px, 220px));
   justify-content: center;
   gap: 32px;
   max-width: 900px;
