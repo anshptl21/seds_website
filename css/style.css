@@ -1590,6 +1590,15 @@ body.sidebar-open .sidebar__item {
   line-height: 1.75;
 }
 
+.solar-fade__photo {
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
 /* ---- Image + text slide-in row ---- */
 .solar-row {
   padding: 70px 0 100px;
@@ -1640,14 +1649,14 @@ body.sidebar-open .sidebar__item {
 
 /* ---- Team grid: frameless hover-reveal cards ---- */
 .solar-team {
-  padding: 10px 0 60px;
+  padding: 10px 0 90px;
 }
 
 .solar-team__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  max-width: 640px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -1687,8 +1696,8 @@ body.sidebar-open .sidebar__item {
   align-items: flex-start;
   justify-content: flex-end;
   text-align: left;
-  padding: 10px;
-  gap: 1px;
+  padding: 18px;
+  gap: 2px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.85) 0%,
@@ -1702,7 +1711,7 @@ body.sidebar-open .sidebar__item {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #FFD800;
-  font-size: clamp(0.65rem, 1vw, 0.8rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   margin: 0;
   line-height: 1.2;
 }
@@ -1712,7 +1721,7 @@ body.sidebar-open .sidebar__item {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #ffffff;
-  font-size: 0.62rem;
+  font-size: 0.85rem;
   margin: 0;
 }
 
