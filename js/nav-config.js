@@ -27,7 +27,7 @@ const NAV_LINKS = [
   { label: "Design Teams", href: "/pages/design_teams.html" },
   { label: "Speakers", href: "/pages/speakers.html" },
   { label: "Space Networking Fair", href: "/spacenetworkingfair.html" },
-  { label: "SAC", href: "/studentastronautcorps.html" },
+  { label: "Student Astronaut Corps", href: "/studentastronautcorps.html" },
   { label: "Solar Sail", href: "/sedssolarsail.html" },
   { label: "Lunabotics", href: "/sedslunabotics.html" },
   { label: "Member Portal", href: "/memberportal.html" },
