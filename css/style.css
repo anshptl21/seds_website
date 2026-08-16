@@ -4543,6 +4543,71 @@ body.lightbox-locked { overflow: hidden; }
   .proj-cards__grid { grid-template-columns: 1fr; max-width: 320px; }
 }
 
+/* ============================================================
+   HOME ACCORDION — Learn More / Support Us / Sponsor
+   (white text, white borders — index.html only)
+   ============================================================ */
+
+.home-support {
+  padding: 20px 0 90px;
+}
+
+.home-accordion {
+  max-width: 780px;
+  margin: 0 auto 24px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.home-accordion__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 26px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.home-accordion__summary::-webkit-details-marker { display: none; }
+
+.home-accordion__chevron {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.home-accordion[open] .home-accordion__chevron {
+  transform: rotate(-135deg);
+}
+
+.home-accordion__body {
+  padding: 0 26px 26px;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #ffffff;
+}
+
+.home-accordion__body a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.home-accordion__body a:hover { color: var(--color-accent); }
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
