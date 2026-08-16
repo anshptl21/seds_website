@@ -710,6 +710,8 @@ body.sidebar-open .sidebar__item {
 .social--linkedin { background: #0a66c2; }
 .social--x { background: #1a1a1a; border: 1px solid #444; }
 .social--mail { background: #4a4a4a; }
+.social--discord { background: #5865F2; }
+.social--linktree { background: #43E660; }
 
 .footer__embed {
   max-width: 1100px;
