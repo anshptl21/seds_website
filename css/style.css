@@ -1863,6 +1863,21 @@ body.sidebar-open .sidebar__item {
   color: #ffffff;
 }
 
+.solar-accordion__subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #FFD800;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  margin: 28px 0 14px;
+}
+
+.solar-accordion__label {
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
 .solar-accordion__body p:first-child { margin-top: 0; }
 .solar-accordion__body a {
   color: #FFD800;
