@@ -1665,7 +1665,7 @@ body.sidebar-open .sidebar__item {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #120821;
+  background: #000000;
 }
 
 .solar-team-card__photo {
@@ -1674,7 +1674,7 @@ body.sidebar-open .sidebar__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7d6a99;
+  color: #666666;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-align: center;
@@ -2169,7 +2169,7 @@ body.sidebar-open .sidebar__item {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #b9ae99;
+  background: #000000;
 }
 
 .luna-team-card__photo {
@@ -2178,7 +2178,7 @@ body.sidebar-open .sidebar__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4a4438;
+  color: #666666;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-align: center;
@@ -2829,7 +2829,7 @@ body.lightbox-locked { overflow: hidden; }
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #10131c;
+  background: #000000;
 }
 
 .snf-team-card__photo {
@@ -2838,7 +2838,7 @@ body.lightbox-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6e7891;
+  color: #666666;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-align: center;
@@ -3346,7 +3346,7 @@ body.lightbox-locked { overflow: hidden; }
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #150608;
+  background: #000000;
 }
 
 .sac-team-card__photo {
@@ -3355,7 +3355,7 @@ body.lightbox-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8a6b6e;
+  color: #666666;
   font-size: 0.8rem;
   letter-spacing: 0.02em;
   text-align: center;
