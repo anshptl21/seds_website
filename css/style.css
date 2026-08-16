@@ -836,6 +836,8 @@ body.sidebar-open .sidebar__item {
   scrollbar-color: var(--mtl-color, #ffffff) rgba(255, 255, 255, 0.08);
   scrollbar-width: thin;
   padding-bottom: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .mtl-scroll::-webkit-scrollbar { height: 8px; }
