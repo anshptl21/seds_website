@@ -1471,12 +1471,11 @@ body.sidebar-open .sidebar__item {
 .solar-hero::before {
   content: "";
   position: absolute;
-  inset: -20px;
-  background-image: url('../assets/solar-sail-logo.png');
+  inset: 0;
+  background-image: url('../assets/solar-sail-hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(6px);
   z-index: 0;
 }
 
