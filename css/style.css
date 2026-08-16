@@ -4623,6 +4623,50 @@ body.lightbox-locked { overflow: hidden; }
 }
 .home-accordion__body a:hover { color: var(--color-accent); }
 
+/* ============================================================
+   TEAM STRUCTURE — sedslunabotics.html
+   ============================================================ */
+
+.luna-structure {
+  padding: 20px 0 90px;
+}
+
+.luna-structure__intro {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.luna-structure__list {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.luna-structure__list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.luna-structure__list li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+}
+
+.luna-structure__list strong {
+  font-weight: 700;
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
