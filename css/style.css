@@ -4195,25 +4195,11 @@ body.lightbox-locked { overflow: hidden; }
 
 /* ---- About ---- */
 .about-page .bg-fixed {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('../assets/about-hero.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.about-page .bg-fixed__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.8) 100%);
-}
-.about-page .about-hero {
-  background-image: none;
-  background: transparent;
+  display: none;
 }
 .about-page .about-row,
 .about-page .site-footer {
-  background: rgba(0, 0, 0, 0.35);
+  background: #000000;
 }
 
 /* ---- Speakers ---- */
@@ -4244,28 +4230,12 @@ body.lightbox-locked { overflow: hidden; }
 
 /* ---- Join ---- */
 .join-page .bg-fixed {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('../assets/join-hero.png');
-  background-size: cover;
-  background-position: center;
-}
-.join-page .bg-fixed__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.85) 100%);
-}
-.join-page .join-hero {
-  background: transparent;
-}
-.join-page .join-hero::before {
-  content: none;
+  display: none;
 }
 .join-page .join-intro,
 .join-page .join-columns,
 .join-page .site-footer {
-  background: rgba(0, 0, 0, 0.35);
+  background: #000000;
 }
 
 /* ============================================================
