@@ -898,6 +898,49 @@ body.sidebar-open .sidebar__item {
   pointer-events: none;
 }
 
+/* Large step number + title above a dot (used for CONOPS-style
+   numbered mission timelines, e.g. sedssolarsail.html). Both are
+   always visible and unaffected by hover/click state. */
+.mtl-number {
+  position: absolute;
+  top: -94px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: #FFD800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.mtl-title {
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.25;
+  pointer-events: none;
+}
+
+/* This page's timeline uses .mtl-number + .mtl-title (two stacked
+   labels) above every dot, so it needs more reserved headroom than
+   the shared default — scoped here so other pages' timelines (which
+   use at most a single .mtl-date label) are unaffected. */
+.solar-page .mtl-track {
+  padding-top: 140px;
+}
+.solar-page .mtl-track::before {
+  top: 152px;
+}
+
 .mtl-dot-slot {
   height: 24px;
   display: flex;
