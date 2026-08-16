@@ -4441,6 +4441,7 @@ body.lightbox-locked { overflow: hidden; }
   justify-content: center;
   gap: 16px;
   text-decoration: none;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .proj-card {
@@ -4454,34 +4455,13 @@ body.lightbox-locked { overflow: hidden; }
 .proj-card--astronaut  { --proj-color: #ffffff; }
 .proj-card--briefcase  { --proj-color: #2f6fed; }
 
-/* The astronaut card is white by default, so on hover the icon
-   needs to flip to black instead of the usual white — otherwise
-   it would disappear into its own white glow. */
-.proj-card--astronaut:hover .proj-card__icon,
-.proj-card--astronaut:focus-visible .proj-card__icon {
-  color: #000000;
-}
-
-.proj-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--proj-color) 90%, transparent) 0%,
-    color-mix(in srgb, var(--proj-color) 50%, transparent) 42%,
-    transparent 70%
-  );
-  transform: scale(0);
-  transition: transform 0.5s ease;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.proj-card:hover::before,
-.proj-card:focus-visible::before {
-  transform: scale(1.6);
+.proj-card:hover,
+.proj-card:focus-visible {
+  background: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  outline: none;
 }
 
 .proj-card__icon {
@@ -4501,7 +4481,7 @@ body.lightbox-locked { overflow: hidden; }
 
 .proj-card:hover .proj-card__icon,
 .proj-card:focus-visible .proj-card__icon {
-  color: #ffffff;
+  color: #000000;
 }
 
 .proj-card__label {
@@ -4515,7 +4495,12 @@ body.lightbox-locked { overflow: hidden; }
   padding: 0 16px;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.proj-card:hover .proj-card__label,
+.proj-card:focus-visible .proj-card__label {
+  color: #000000;
 }
 
 .proj-card:hover .proj-card__label,
@@ -4525,7 +4510,7 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .proj-card::before,
+  .proj-card,
   .proj-card__icon,
   .proj-card__label { transition: none; }
 }
