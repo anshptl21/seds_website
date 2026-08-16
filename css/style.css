@@ -4450,6 +4450,18 @@ body.lightbox-locked { overflow: hidden; }
 .proj-card--luna  { --proj-color: rgb(191, 238, 255); }
 .proj-card--dt    { --proj-color: #6fa9b2; }
 
+.proj-card--chalkboard { --proj-color: #8b0000; }
+.proj-card--astronaut  { --proj-color: #ffffff; }
+.proj-card--briefcase  { --proj-color: #2f6fed; }
+
+/* The astronaut card is white by default, so on hover the icon
+   needs to flip to black instead of the usual white — otherwise
+   it would disappear into its own white glow. */
+.proj-card--astronaut:hover .proj-card__icon,
+.proj-card--astronaut:focus-visible .proj-card__icon {
+  color: #000000;
+}
+
 .proj-card::before {
   content: "";
   position: absolute;
