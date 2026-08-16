@@ -2394,6 +2394,41 @@ body.sidebar-open .sidebar__item {
   color: #e8e8e8;
 }
 
+.luna-accordion__subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #bfeeff;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  margin: 28px 0 14px;
+}
+
+.luna-accordion__label {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.luna-accordion__list {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.luna-accordion__list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+
+.luna-accordion__list li::before {
+  content: "\25AA";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.7rem;
+  color: #bfeeff;
+}
+
 .luna-accordion__body a {
   color: #bfeeff;
   text-decoration: underline;
