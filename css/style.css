@@ -2733,9 +2733,11 @@ body.lightbox-locked { overflow: hidden; }
   text-align: center;
   padding: calc(var(--header-height) + 40px) 20px 60px;
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(250,185,87,0.35) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 80%, rgba(0,74,173,0.45) 0%, transparent 55%),
-    #000000;
+    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 60%, #000000 100%),
+    url('../assets/snf-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .snf-hero__title {
