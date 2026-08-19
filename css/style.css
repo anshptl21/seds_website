@@ -2821,6 +2821,12 @@ body.lightbox-locked { overflow: hidden; }
   padding: 10px 0 90px;
 }
 
+.snf-team .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .snf-team__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
