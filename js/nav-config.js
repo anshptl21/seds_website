@@ -52,6 +52,7 @@ const NAV_LINKS = [
     ],
   },
  // { label: "Member Portal", href: "/memberportal.html" },
-  {label
+  { label: "Donate", href: "/pages/donations.html" },
+  { label: "Marketplace", href: "/pages/marketplace.html" },
   { label: "Contact", href: "/pages/contact.html" },
 ];
