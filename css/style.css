@@ -235,6 +235,88 @@ body.sidebar-open .sidebar__item {
   border-left-color: var(--color-accent);
 }
 
+/* ---- Nested parent/child items (e.g. About > Team, Projects > Solar Sail) ---- */
+.sidebar__parent-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.sidebar__link--parent {
+  flex: 1;
+  padding-right: 12px;
+}
+
+.sidebar__link--label {
+  cursor: default;
+}
+
+.sidebar__submenu-toggle {
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar__submenu-toggle:hover,
+.sidebar__submenu-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar__submenu-chevron {
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--color-text-dim);
+  border-bottom: 2px solid var(--color-text-dim);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, border-color 0.2s ease;
+}
+
+.sidebar__item--parent.is-open .sidebar__submenu-chevron {
+  transform: rotate(-135deg);
+  border-color: var(--color-text);
+}
+
+.sidebar__sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.sidebar__item--parent.is-open .sidebar__sublist {
+  max-height: 400px;
+}
+
+.sidebar__sublink {
+  display: block;
+  padding: 12px 24px 12px 44px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--color-text-dim);
+  border-left: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sidebar__sublink:hover,
+.sidebar__sublink:focus-visible {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: var(--color-accent);
+}
+
+.sidebar__sublink.is-active {
+  color: var(--color-text);
+  border-left-color: var(--color-accent);
+}
+
 .sidebar__footer {
   padding: 20px 24px 4px;
   font-size: 0.75rem;

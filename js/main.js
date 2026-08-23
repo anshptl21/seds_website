@@ -19,6 +19,7 @@
       link.classList.add("is-active");
       link.setAttribute("aria-current", "page");
     }
+    return linkFile === current;
   }
 
   function buildSidebar() {
@@ -30,14 +31,81 @@
       li.className = "sidebar__item";
       li.style.transitionDelay = (i * 45) + "ms";
 
-      const a = document.createElement("a");
-      a.href = item.href;
-      a.className = "sidebar__link";
-      a.textContent = item.label;
+      const hasChildren = Array.isArray(item.children) && item.children.length > 0;
 
-      highlightCurrentPage(a);
-      li.appendChild(a);
+      if (!hasChildren) {
+        const a = document.createElement("a");
+        a.href = item.href;
+        a.className = "sidebar__link";
+        a.textContent = item.label;
+        highlightCurrentPage(a);
+        li.appendChild(a);
+        list.appendChild(li);
+        return;
+      }
+
+      // Parent item — may or may not have its own href.
+      li.classList.add("sidebar__item--parent");
+
+      const row = document.createElement("div");
+      row.className = "sidebar__parent-row";
+
+      let parentIsActive = false;
+
+      if (item.href) {
+        const a = document.createElement("a");
+        a.href = item.href;
+        a.className = "sidebar__link sidebar__link--parent";
+        a.textContent = item.label;
+        parentIsActive = highlightCurrentPage(a);
+        row.appendChild(a);
+      } else {
+        const span = document.createElement("span");
+        span.className = "sidebar__link sidebar__link--parent sidebar__link--label";
+        span.textContent = item.label;
+        row.appendChild(span);
+      }
+
+      const toggleBtn = document.createElement("button");
+      toggleBtn.type = "button";
+      toggleBtn.className = "sidebar__submenu-toggle";
+      toggleBtn.setAttribute("aria-expanded", "false");
+      toggleBtn.setAttribute("aria-label", "Toggle " + item.label + " submenu");
+      toggleBtn.innerHTML = '<span class="sidebar__submenu-chevron" aria-hidden="true"></span>';
+      row.appendChild(toggleBtn);
+
+      li.appendChild(row);
+
+      const sublist = document.createElement("ul");
+      sublist.className = "sidebar__sublist";
+
+      let childIsActive = false;
+
+      item.children.forEach((child) => {
+        const subLi = document.createElement("li");
+        subLi.className = "sidebar__subitem";
+        const subA = document.createElement("a");
+        subA.href = child.href;
+        subA.className = "sidebar__sublink";
+        subA.textContent = child.label;
+        if (highlightCurrentPage(subA)) childIsActive = true;
+        subLi.appendChild(subA);
+        sublist.appendChild(subLi);
+      });
+
+      li.appendChild(sublist);
       list.appendChild(li);
+
+      // Auto-expand if the current page is this parent or one of its children.
+      if (parentIsActive || childIsActive) {
+        li.classList.add("is-open");
+        toggleBtn.setAttribute("aria-expanded", "true");
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = li.classList.toggle("is-open");
+        toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
     });
   }
 
