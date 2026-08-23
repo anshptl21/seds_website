@@ -51,7 +51,7 @@ const NAV_LINKS = [
       { label: "Design Teams", href: "/pages/design_teams.html" },
     ],
   },
- // { label: "Member Portal", href: "/memberportal.html" },
+ // { label: "Member Portal", href: "/pages/memberportal.html" },
   { label: "Donate", href: "/pages/donations.html" },
   { label: "Marketplace", href: "/pages/marketplace.html" },
   { label: "Contact", href: "/pages/contact.html" },
