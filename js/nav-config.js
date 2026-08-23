@@ -37,20 +37,21 @@ const NAV_LINKS = [
     href: "/pages/about.html",
     children: [
       { label: "Team", href: "/pages/team.html" },
+      { label: "Join", href: "/pages/join.html" }
     ],
   },
-  { label: "Join", href: "/pages/join.html" },
-  { label: "Design Teams", href: "/pages/design_teams.html" },
   { label: "Speakers", href: "/pages/speakers.html" },
-  { label: "Space Networking Fair", href: "/spacenetworkingfair.html" },
-  { label: "Student Astronaut Corps", href: "/studentastronautcorps.html" },
+  { label: "Space Networking Fair", href: "/pages/spacenetworkingfair.html" },
+  { label: "Student Astronaut Corps", href: "/pages/studentastronautcorps.html" },
   {
     label: "Projects",
     children: [
-      { label: "Solar Sail", href: "/sedssolarsail.html" },
-      { label: "Lunabotics", href: "/sedslunabotics.html" },
+      { label: "Solar Sail", href: "/pages/sedssolarsail.html" },
+      { label: "Lunabotics", href: "/pages/sedslunabotics.html" },
+      { label: "Design Teams", href: "/pages/design_teams.html" },
     ],
   },
-  { label: "Member Portal", href: "/memberportal.html" },
+ // { label: "Member Portal", href: "/memberportal.html" },
+  {label
   { label: "Contact", href: "/pages/contact.html" },
 ];
