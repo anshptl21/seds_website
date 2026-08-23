@@ -4793,6 +4793,86 @@ body.lightbox-locked { overflow: hidden; }
   font-weight: 700;
 }
 
+/* ============================================================
+   DONATIONS HERO — pages/donations.html
+   ============================================================ */
+
+.donate-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + 40px) 20px 60px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.15) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0) 60%, #000000 100%),
+    url('../assets/donations-hero.jpg');
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+}
+
+.donate-hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.donate-hero__text {
+  flex: 1 1 420px;
+  text-align: left;
+}
+
+.donate-hero__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+.donate-hero__heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  margin: 0 0 22px;
+  line-height: 1;
+}
+
+.donate-hero__desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 480px;
+  margin: 0;
+}
+
+.donate-hero__astronaut {
+  flex: 0 0 auto;
+  width: min(300px, 34vw);
+  opacity: 0.55;
+}
+
+.donate-hero__astronaut img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .donate-hero__inner { justify-content: center; text-align: center; }
+  .donate-hero__text { text-align: center; }
+  .donate-hero__desc { margin: 0 auto; }
+  .donate-hero__astronaut { width: 45vw; opacity: 0.35; }
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
