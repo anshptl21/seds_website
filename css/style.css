@@ -4794,6 +4794,50 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 /* ============================================================
+   TEAM STRUCTURE — sedssolarsail.html
+   ============================================================ */
+
+.solar-structure {
+  padding: 20px 0 90px;
+}
+
+.solar-structure__intro {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.solar-structure__list {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.solar-structure__list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.solar-structure__list li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+}
+
+.solar-structure__list strong {
+  font-weight: 700;
+}
+
+/* ============================================================
    DONATIONS HERO — pages/donations.html
    ============================================================ */
 
