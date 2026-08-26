@@ -1518,6 +1518,18 @@ body.sidebar-open .sidebar__item {
   cursor: default;
 }
 
+.team-item__status--link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.team-item__status--link:hover,
+.team-item__status--link:focus-visible {
+  background: #ffffff;
+  color: #000000;
+}
+
 @media (max-width: 720px) {
   .team-page__mars { width: 70vw; opacity: 0.3; }
   .team-item__title { font-size: 1.2rem; }
