@@ -4873,6 +4873,34 @@ body.lightbox-locked { overflow: hidden; }
   .donate-hero__astronaut { width: 45vw; opacity: 0.35; }
 }
 
+/* ============================================================
+   APPLY BANNER BUTTON — sedssolarsail.html
+   ============================================================ */
+
+.solar-apply-btn {
+  display: block;
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 18px 24px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.solar-apply-btn:hover,
+.solar-apply-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
