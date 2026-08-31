@@ -4982,6 +4982,22 @@ body.lightbox-locked { overflow: hidden; }
   .gcal-embed iframe { height: 480px; }
 }
 
+/* ============================================================
+   INLINE TEXT LINK UNDERLINE (site-wide)
+   ============================================================
+   Plain <a> tags sitting inside body copy (mailto links, "learn
+   more" links, speaker/officer bio links, etc.) get underlined
+   for clear link affordance. Deliberately styled component links
+   — buttons, cards, nav items, social icons — are excluded, since
+   their own border/background/hover treatment already signals
+   "clickable" and an underline would look like a design bug.
+   ============================================================ */
+
+a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
