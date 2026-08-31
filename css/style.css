@@ -4993,9 +4993,48 @@ body.lightbox-locked { overflow: hidden; }
    "clickable" and an underline would look like a design bug.
    ============================================================ */
 
-a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink) {
+a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink):not(.donate-cta__btn) {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* ============================================================
+   DONATE CTA BUTTON — pages/donations.html
+   ============================================================ */
+
+.donate-cta {
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+
+.donate-cta__btn {
+  display: inline-block;
+  padding: 18px 48px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.donate-cta__btn:hover,
+.donate-cta__btn:focus-visible {
+  background: #FFD800;
+  color: #000000;
+  box-shadow: 0 8px 24px rgba(80, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.donate-cta__note {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 640px) {
