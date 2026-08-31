@@ -4959,6 +4959,34 @@ body.lightbox-locked { overflow: hidden; }
 }
 
 /* ============================================================
+   APPLY BANNER BUTTON — sedslunabotics.html
+   ============================================================ */
+
+.luna-apply-btn {
+  display: block;
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 18px 24px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.luna-apply-btn:hover,
+.luna-apply-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
    GOOGLE CALENDAR EMBED — index.html, studentastronautcorps.html
    ============================================================ */
 
@@ -4993,7 +5021,7 @@ body.lightbox-locked { overflow: hidden; }
    "clickable" and an underline would look like a design bug.
    ============================================================ */
 
-a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink):not(.donate-cta__btn) {
+a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.luna-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink):not(.donate-cta__btn) {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
