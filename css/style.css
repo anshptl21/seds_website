@@ -1239,6 +1239,19 @@ body.sidebar-open .sidebar__item {
   background-position: center;
 }
 
+.about-row__media--video {
+  border-style: solid;
+  padding: 0;
+  overflow: hidden;
+}
+
+.about-row__media--video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* Alternate row order on wide screens if you ever want image-left rows:
    add class "about-row--flip" and uncomment below */
 /* .about-row--flip .about-row__text { order: 2; }
