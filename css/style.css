@@ -2050,6 +2050,7 @@ body.sidebar-open .sidebar__item {
 }
 
 .officer-card {
+  display: block;
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -5103,8 +5104,32 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
 .team-advisor__text {
   flex: 1 1 320px;
   color: #ffffff;
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-size: 1.155rem;
   line-height: 1.75;
+}
+
+.team-advisor__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team-advisor__list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+
+.team-advisor__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 .advisor-photo-only {
