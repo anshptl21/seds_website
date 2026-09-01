@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAMU SEDS — Students for the Exploration and Development of Space</title>
 <meta name="description" content="TAMU SEDS connects students of all backgrounds with a passion for space exploration.">
-<link rel="stylesheet" href="css/style.css?v=91">
+<link rel="stylesheet" href="css/style.css?v=92">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body class="home-page">
@@ -310,14 +310,20 @@ Astromaterials Research and Exploration Science (ARES) Division
 </section>
 
 <!-- ============ ADVISOR ============ -->
-<section class="advisor-photo-only">
+<!-- Same flip-card component as Our Partners: front shows the photo,
+     hover flips to reveal the name; the whole card links out. -->
+<section class="partners-static">
   <div class="container">
-    <h2 style="text-align:center;">Advisor</h2>
-    <div class="advisor-photo-only__wrap">
-      <a class="officer-card" href="https://engineering.tamu.edu/aerospace/profiles/gechamitoff-.html" target="_blank" rel="noopener" tabindex="0">
-        <div class="officer-card__photo"><img src="images/officers/chamitoff.jpg"></div>
-        <div class="officer-card__overlay">
-          <p class="officer-card__year">Dr. Gregory Chamitoff</p>
+    <h2 class="partners__title">Advisor</h2>
+    <div class="partners-static__grid" style="grid-template-columns: minmax(160px, 220px); justify-content: center;">
+      <a class="partner-flip" href="https://engineering.tamu.edu/aerospace/profiles/gechamitoff-.html" target="_blank" rel="noopener">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="images/officers/chamitoff.jpg" alt="Dr. Gregory Chamitoff" style="max-width:100%;max-height:100%;object-fit:cover;">
+          </div>
+          <div class="partner-flip__back">
+            <p>Dr. Gregory Chamitoff</p>
+          </div>
         </div>
       </a>
     </div>
@@ -366,10 +372,10 @@ Astromaterials Research and Exploration Science (ARES) Division
   </div>
 </footer>
 
-<script src="js/nav-config.js?v=91"></script>
-<script src="js/main.js?v=91"></script>
-<script src="js/mission-timeline.js?v=91"></script>
-<script src="js/scroll-reveal.js?v=91"></script>
+<script src="js/nav-config.js?v=92"></script>
+<script src="js/main.js?v=92"></script>
+<script src="js/mission-timeline.js?v=92"></script>
+<script src="js/scroll-reveal.js?v=92"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script>
 (function () {
