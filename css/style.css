@@ -4312,6 +4312,7 @@ body.lightbox-locked { overflow: hidden; }
 .home-page .partners-static,
 .home-page .proj-cards,
 .home-page .home-support,
+.home-page .advisor-photo-only,
 .home-page .site-footer {
   background: #000000;
 }
@@ -5070,6 +5071,53 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
   color: var(--color-text-dim);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+/* ============================================================
+   ADVISOR — team.html and index.html
+   ============================================================
+   Reuses the same .officer-card square photo frame as the officer
+   grid, so the photo styling matches exactly. team.html shows the
+   photo alongside a bio paragraph; index.html shows just the photo.
+   ============================================================ */
+
+.team-advisor {
+  padding: 40px 0 90px;
+}
+
+.team-advisor__row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.team-advisor__photo {
+  flex: 0 0 auto;
+  width: 260px;
+  display: block;
+}
+
+.team-advisor__text {
+  flex: 1 1 320px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.advisor-photo-only {
+  padding: 40px 0 90px;
+}
+
+.advisor-photo-only__wrap {
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .team-advisor__row { justify-content: center; text-align: center; }
 }
 
 @media (max-width: 640px) {
