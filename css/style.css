@@ -5145,6 +5145,90 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
   .team-advisor__row { justify-content: center; text-align: center; }
 }
 
+/* ============================================================
+   SHOP GRID — pages/marketplace.html
+   ============================================================ */
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.shop-card {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.shop-card__media {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shop-card__prices {
+  padding: 16px 16px 4px;
+  font-family: var(--font-display);
+}
+
+.shop-card__price {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.shop-card__price--original {
+  color: var(--color-text-dim);
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.shop-card__btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 14px 16px 0;
+  padding: 12px 0;
+  background: #e88a8a;
+  color: #1a0000;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.shop-card__btn:hover,
+.shop-card__btn:focus-visible {
+  background: #f2a5a5;
+}
+
+@media (max-width: 900px) {
+  .shop-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .shop-grid { grid-template-columns: 1fr; max-width: 340px; }
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
   .timeline__point { width: 14px; height: 14px; }
