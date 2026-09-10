@@ -5234,3 +5234,35 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
   .timeline__point { width: 14px; height: 14px; }
   .board__grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============================================================
+   MOBILE: KEEP ONLY THE SLIDE-IN SCROLL REVEAL ANIMATION
+   ============================================================
+   Applies to every page (one shared stylesheet). On small screens,
+   hover-based effects (card flips, glows, lifts, chevron rotations,
+   pulsing dots, etc.) and other decorative transitions/animations
+   are turned off — hover doesn't really exist on touch devices, so
+   these effects either never trigger correctly or can get visually
+   "stuck" after a tap. The scroll-triggered slide-in reveal effect
+   (.reveal / .reveal--left / .reveal--right / .reveal--fade) is
+   kept, since it's still meaningful on mobile scrolling.
+
+   Note: this also removes the smoothing on functional UI transitions
+   (sidebar open/close, accordion expand/collapse, etc.) — those
+   still work exactly the same, they just snap open/closed instantly
+   on mobile instead of animating.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .reveal {
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+}
